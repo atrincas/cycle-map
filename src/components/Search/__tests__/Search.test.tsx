@@ -22,6 +22,22 @@ describe('@components/Search', () => {
     expect(comboBox).toBeInTheDocument()
   })
 
+  it('should set default query and default country if passed as props', () => {
+    render(
+      <Search
+        comboBoxItems={countries.data}
+        onSearch={handleOnSearch}
+        defaultQuery="foo"
+        defaultCountryCode="ES"
+      />
+    )
+
+    const textInput = screen.getByPlaceholderText('Search network')
+    fireEvent.submit(textInput)
+
+    expect(handleOnSearch).toHaveBeenCalledWith('foo', 'ES')
+  })
+
   it('should handle state internally and call onSearch when text input is submitted or a value in the combobox is selected', () => {
     render(<Search comboBoxItems={countries.data} onSearch={handleOnSearch} />)
 
