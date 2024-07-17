@@ -9,10 +9,12 @@ describe('@components/Header/HomeHeader', () => {
 
     const logoIcon = screen.getByTestId('cycle-map-logo')
     const logoText = screen.getByText('CycleMap')
+    const title = screen.getByText('Discover bike networks')
     const description = screen.getByText(loremIpsum)
 
     expect(logoIcon).toContainHTML('<title>CycleMap logo</title>')
     expect(logoText).toBeInTheDocument()
+    expect(title).toBeInTheDocument()
     expect(description).toBeInTheDocument()
   })
 })
