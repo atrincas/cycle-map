@@ -1,0 +1,41 @@
+{
+  "networks": [
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-siena",
+      "id": "bicincitta-siena",
+      "location": {
+        "city": "Siena",
+        "country": "IT",
+        "latitude": 43.3186,
+        "longitude": 11.3306
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=202"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-maroussi",
+      "id": "cyclopolis-maroussi",
+      "location": {
+        "city": "Maroussi",
+        "country": "GR",
+        "latitude": 38.0568722388,
+        "longitude": 23.8083299536
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-nafplio",
+      "id": "cyclopolis-nafplio",
+      "location": {
+        "city": "Nafplio",
+        "country": "GR",
+        "latitude": 37.5639397319,
+        "longitude": 22.8093402872
+      },
+      "name": "Cyclopolis"
+    }
+  ]
+}
