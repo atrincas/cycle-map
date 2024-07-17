@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { fireEvent, queryHelpers, render, screen } from '@testing-library/react'
 import { Search } from '../Search'
-import countries from '@/lib/countries.json'
+import countries from '@/lib/data/countries.json'
 import { beforeEach } from 'node:test'
 
 describe('@components/Search', () => {

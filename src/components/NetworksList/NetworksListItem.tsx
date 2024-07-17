@@ -1,4 +1,6 @@
+import { getAdditionalCompaniesCount, getCountryName } from '@/lib/utils'
 import { Location } from '@/types'
+import Link from 'next/link'
 
 interface Props {
   name: string
@@ -8,9 +10,36 @@ interface Props {
 }
 
 export function NetworksListItem({ name, company, href, location }: Props) {
+  const additionalCompaniesCount = getAdditionalCompaniesCount(company)
+
   return (
-    <section>
-      <h2></h2>
-    </section>
+    <Link href={href}>
+      <h2>{name}</h2>
+      <p>
+        {location.city}, {getCountryName(location.country)}
+      </p>
+      <p>{company.join(', ')}</p>
+      <div>
+        <svg
+          data-testid="arrow-right"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Arrow right</title>
+          <path
+            d="M4.16659 10L15.8333 10M15.8333 10L9.99992 4.16668M15.8333 10L9.99992 15.8333"
+            stroke="#F0581F"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {additionalCompaniesCount && <div>+{additionalCompaniesCount}</div>}
+    </Link>
   )
 }
