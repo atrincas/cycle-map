@@ -50,7 +50,6 @@ Based on the requirements and after inspecting the citybikes API I decided on th
       in dev mode.
 - [x] Render Header with logo, title and description.
 - [x] Render SearchComponent with TextInput and country filter Combobox.
-- [] Render paginated NetworksList (list of networks).
 - [] Render list of NetworkCards that is a clickable link to DetailView page, and should have:
   - name
   - location (city + country)
@@ -59,6 +58,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 - [] SearchComponent TextInput is performed against name and companies in the NetworksList.
 - [] Filter NetworksList based on search query, selection should be stored as query param in URL.
 - [] Filter NetworksList based on country, selection should be stored as query param in URL.
+- [] \*Render paginated NetworksList (list of networks).
 - [] \*Divide NetworksList items with Pagination if needed, selection should be stored as query
   param in URL.
 
