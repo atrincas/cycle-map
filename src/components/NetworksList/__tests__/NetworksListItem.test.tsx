@@ -9,21 +9,21 @@ describe('@components/NetworksList/NetworksListItem', () => {
   it('should be wrapped inside a link element with the correct href', () => {
     render(
       <NetworksListItem
+        id={mockItem.id}
         name={mockItem.name}
         company={mockItem.company}
-        href={mockItem.href}
         location={mockItem.location}
       />
     )
-    expect(screen.getByRole('link')).toHaveAttribute('href', mockItem.href)
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/' + mockItem.id)
   })
 
   it('should render the correct name, location, overview of company names, and arrow icon', () => {
     render(
       <NetworksListItem
+        id={mockItem.id}
         name={mockItem.name}
         company={mockItem.company}
-        href={mockItem.href}
         location={mockItem.location}
       />
     )
@@ -44,9 +44,9 @@ describe('@components/NetworksList/NetworksListItem', () => {
 
     render(
       <NetworksListItem
+        id={mockItem.id}
         name={mockItem.name}
         company={mockCompanies}
-        href={mockItem.href}
         location={mockItem.location}
       />
     )

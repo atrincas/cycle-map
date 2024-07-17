@@ -3,17 +3,17 @@ import { Location } from '@/types'
 import Link from 'next/link'
 
 interface Props {
+  id: string
   name: string
   company: string[]
-  href: string
   location: Location
 }
 
-export function NetworksListItem({ name, company, href, location }: Props) {
+export function NetworksListItem({ id, name, company, location }: Props) {
   const additionalCompaniesCount = getAdditionalCompaniesCount(company)
 
   return (
-    <Link href={href}>
+    <Link href={`/${id}`}>
       <h2>{name}</h2>
       <p>
         {location.city}, {getCountryName(location.country)}
