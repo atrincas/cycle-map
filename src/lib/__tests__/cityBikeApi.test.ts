@@ -11,9 +11,7 @@ describe('cityBikeApi/getNetworks', () => {
     const mockResponse: FetchNetworksResponse = mockNetworks
     global.fetch = vi.fn().mockResolvedValueOnce({
       ok: true,
-      text: () => {
-        return Promise.resolve(JSON.stringify(mockResponse))
-      }
+      json: () => Promise.resolve(mockResponse)
     })
 
     const data = await getNetworks()
@@ -41,12 +39,10 @@ describe('cityBikeApi/getNetworkStations', () => {
     const mockResponse: FetchNetworkStationsResponse = mockNetworkStations
     global.fetch = vi.fn().mockResolvedValueOnce({
       ok: true,
-      text: () => {
-        return Promise.resolve(JSON.stringify(mockResponse))
-      }
+      json: () => Promise.resolve(mockResponse)
     })
 
-    const data = await getNetworkStations()
+    const data = await getNetworkStations('bicincitta-siena')
 
     expect(data).toEqual(mockResponse)
     expect(global.fetch).toHaveBeenCalledTimes(1)
@@ -54,11 +50,11 @@ describe('cityBikeApi/getNetworkStations', () => {
   })
 
   it('should throw an error if fetch failed', async () => {
-    const errorMessage = 'Failed to fetch networks'
+    const errorMessage = 'Failed to fetch network stations'
 
     global.fetch = vi.fn().mockRejectedValueOnce(new Error(errorMessage))
 
-    await expect(getNetworkStations()).rejects.toThrowError(errorMessage)
+    await expect(getNetworkStations('bicincitta-siena')).rejects.toThrowError(errorMessage)
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith(apiEndpoint)
   })
