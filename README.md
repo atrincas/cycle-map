@@ -46,10 +46,10 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 
 #### Minimal requirements
 
-- [] Fetch data from citybike API and store in the client, use mock data to replicate api response
-  in dev mode.
-- [] Render paginated NetworksList (list of networks).
+- [x] Fetch data from citybike API and store in the client, use mock data to replicate api response
+      in dev mode.
 - [] Render Header with logo, title and description.
+- [] Render paginated NetworksList (list of networks).
 - [] Render SearchComponent with TextInput and country filter Combobox.
 - [] Render list of NetworkCards that is a clickable link to DetailView page, and should have:
   - name

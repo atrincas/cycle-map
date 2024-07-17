@@ -1,6 +1,18 @@
 {
   "networks": [
     {
+      "company": ["ЗАО «СитиБайк»"],
+      "href": "/v2/networks/velobike-moscow",
+      "id": "velobike-moscow",
+      "location": {
+        "city": "Moscow",
+        "country": "RU",
+        "latitude": 55.75,
+        "longitude": 37.616667
+      },
+      "name": "Velobike"
+    },
+    {
       "company": ["Comunicare S.r.l."],
       "href": "/v2/networks/bicincitta-siena",
       "id": "bicincitta-siena",
@@ -36,6 +48,1110 @@
         "longitude": 22.8093402872
       },
       "name": "Cyclopolis"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-parco-dei-colli-di-bergamo",
+      "id": "bicincitta-parco-dei-colli-di-bergamo",
+      "location": {
+        "city": "Parco dei Colli di Bergamo",
+        "country": "IT",
+        "latitude": 45.72295637032245,
+        "longitude": 9.649230073016383
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=203"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-aigialeia",
+      "id": "cyclopolis-aigialeia",
+      "location": {
+        "city": "Aigialeia",
+        "country": "GR",
+        "latitude": 38.2511101325,
+        "longitude": 22.0821570196
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-marathon",
+      "id": "cyclopolis-marathon",
+      "location": {
+        "city": "Marathon",
+        "country": "GR",
+        "latitude": 38.0855680022,
+        "longitude": 23.9776389963
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-mantova",
+      "id": "bicincitta-mantova",
+      "location": {
+        "city": "Mantova",
+        "country": "IT",
+        "latitude": 45.15866370764634,
+        "longitude": 10.783718973016335
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=204"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-neasmyrni",
+      "id": "cyclopolis-neasmyrni",
+      "location": {
+        "city": "Νea Smyrni",
+        "country": "GR",
+        "latitude": 37.9381,
+        "longitude": 23.7126
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-moschatotavros",
+      "id": "cyclopolis-moschatotavros",
+      "location": {
+        "city": "Μoschato-Tavros",
+        "country": "GR",
+        "latitude": 37.9538991434,
+        "longitude": 23.6824746661
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-arxaiaolympia",
+      "id": "cyclopolis-arxaiaolympia",
+      "location": {
+        "city": "Αrxaia Olympia",
+        "country": "GR",
+        "latitude": 37.6419700934,
+        "longitude": 21.6247265179
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-kiato",
+      "id": "cyclopolis-kiato",
+      "location": {
+        "city": "Kιato",
+        "country": "GR",
+        "latitude": 38.0132674508,
+        "longitude": 22.7493819902
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-assemini",
+      "id": "bicincitta-assemini",
+      "location": {
+        "city": "Assemini",
+        "country": "IT",
+        "latitude": 39.28956306007679,
+        "longitude": 9.006601555294765
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=205"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-rhodes",
+      "id": "cyclopolis-rhodes",
+      "location": {
+        "city": "Rhodes",
+        "country": "GR",
+        "latitude": 36.4509118,
+        "longitude": 28.2246966
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-florina",
+      "id": "cyclopolis-florina",
+      "location": {
+        "city": "Florina",
+        "country": "GR",
+        "latitude": 40.8016111,
+        "longitude": 21.4245222
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-tortoli",
+      "id": "bicincitta-tortoli",
+      "location": {
+        "city": "Tortolì",
+        "country": "IT",
+        "latitude": 39.92664489852196,
+        "longitude": 9.654953570777934
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=206"
+    },
+    {
+      "company": ["Cyclopolis Systems"],
+      "href": "/v2/networks/cyclopolis-limnos",
+      "id": "cyclopolis-limnos",
+      "location": {
+        "city": "Limnos",
+        "country": "GR",
+        "latitude": 39.8747861,
+        "longitude": 25.0586722
+      },
+      "name": "Cyclopolis"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-gaeta",
+      "id": "bicincitta-gaeta",
+      "location": {
+        "city": "Gaeta",
+        "country": "IT",
+        "latitude": 41.209620965538036,
+        "longitude": 13.584335125656139
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=207"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-borgarello",
+      "id": "bicincitta-borgarello",
+      "location": {
+        "city": "Borgarello",
+        "country": "IT",
+        "latitude": 45.23963753440171,
+        "longitude": 9.136150475640875
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=208"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-pizzighettone-formigara",
+      "id": "bicincitta-pizzighettone-formigara",
+      "location": {
+        "city": "Pizzighettone e Formigara",
+        "country": "IT",
+        "latitude": 45.186748819167434,
+        "longitude": 9.778087948479424
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=209"
+    },
+    {
+      "company": ["The National Transport Authority"],
+      "href": "/v2/networks/cork",
+      "id": "cork",
+      "location": {
+        "city": "Cork",
+        "country": "IE",
+        "latitude": 51.893604,
+        "longitude": -8.494174
+      },
+      "name": "TFI Bikes"
+    },
+    {
+      "company": ["The National Transport Authority"],
+      "href": "/v2/networks/limerick",
+      "id": "limerick",
+      "location": {
+        "city": "Limerick",
+        "country": "IE",
+        "latitude": 52.668746,
+        "longitude": -8.627809
+      },
+      "name": "TFI Bikes"
+    },
+    {
+      "company": ["BTS Group Holdings"],
+      "href": "/v2/networks/punpunbikeshare",
+      "id": "punpunbikeshare",
+      "location": {
+        "city": "Bangkok",
+        "country": "TH",
+        "latitude": 13.75,
+        "longitude": 100.516667
+      },
+      "name": "Pun Pun Bike Share"
+    },
+    {
+      "company": ["The National Transport Authority"],
+      "href": "/v2/networks/galway",
+      "id": "galway",
+      "location": {
+        "city": "Galway",
+        "country": "IE",
+        "latitude": 53.2783491544,
+        "longitude": -9.05069143207
+      },
+      "name": "TFI Bikes"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-montecatini-terme",
+      "id": "bicincitta-montecatini-terme",
+      "location": {
+        "city": "Montecatini Terme",
+        "country": "IT",
+        "latitude": 43.88362791665083,
+        "longitude": 10.764385656591799
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=210"
+    },
+    {
+      "company": ["Bike U Sp. z o.o."],
+      "href": "/v2/networks/bikeu-bra",
+      "id": "bikeu-bra",
+      "location": {
+        "city": "Bydgoszcz",
+        "country": "PL",
+        "latitude": 53.12193,
+        "longitude": 18.00038
+      },
+      "name": "Bydgoski rower aglomeracyjny"
+    },
+    {
+      "company": ["PBSC", "Serco Group plc"],
+      "href": "/v2/networks/santander-cycles",
+      "id": "santander-cycles",
+      "location": {
+        "city": "London",
+        "country": "GB",
+        "latitude": 51.51121389999999,
+        "longitude": -0.1198244
+      },
+      "name": "Santander Cycles"
+    },
+    {
+      "company": ["PBSC", "Alta Bicycle Share, Inc"],
+      "gbfs_href": "https://asp.publicbikesystem.net/ube/gbfs/v1/gbfs.json",
+      "href": "/v2/networks/we-cycle",
+      "id": "we-cycle",
+      "location": {
+        "city": "Aspen, CO",
+        "country": "US",
+        "latitude": 39.194951,
+        "longitude": -106.837002
+      },
+      "name": "WE-cycle"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bicincitta-carrara",
+      "id": "bicincitta-carrara",
+      "location": {
+        "city": "Carrara",
+        "country": "IT",
+        "latitude": 44.07731805550891,
+        "longitude": 10.097172450401331
+      },
+      "name": "Bicincittà",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=211"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/tigullionbike",
+      "id": "tigullionbike",
+      "location": {
+        "city": "Sestri Levante - Lavagna",
+        "country": "IT",
+        "latitude": 44.272554,
+        "longitude": 9.395714
+      },
+      "name": "Tigullionbike",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=80"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/arbike",
+      "id": "arbike",
+      "location": {
+        "city": "Arezzo",
+        "country": "IT",
+        "latitude": 43.473333,
+        "longitude": 11.87
+      },
+      "name": "ARbike",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=84"
+    },
+    {
+      "company": ["Velobike.kz, LLP", "Smoove"],
+      "href": "/v2/networks/velobike",
+      "id": "velobike",
+      "location": {
+        "city": "Astana",
+        "country": "KZ",
+        "latitude": 51.166667,
+        "longitude": 71.416667
+      },
+      "name": "Velobike"
+    },
+    {
+      "company": ["Smovengo"],
+      "ebikes": true,
+      "gbfs_href": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/gbfs.json",
+      "href": "/v2/networks/velib",
+      "id": "velib",
+      "license": {
+        "name": "OPEN LICENCE 2.0",
+        "url": "etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf"
+      },
+      "location": {
+        "city": "Paris",
+        "country": "FR",
+        "latitude": 48.856614,
+        "longitude": 2.3522219
+      },
+      "name": "Vélib' Métropole"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/ascoli-piceno",
+      "id": "ascoli-piceno",
+      "location": {
+        "city": "Ascoli Piceno",
+        "country": "IT",
+        "latitude": 42.85,
+        "longitude": 13.583333
+      },
+      "name": "Ascoli Piceno",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=73"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bigi",
+      "id": "bigi",
+      "location": {
+        "city": "Bergamo",
+        "country": "IT",
+        "latitude": 45.695,
+        "longitude": 9.67
+      },
+      "name": "BiGi",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=133"
+    },
+    {
+      "company": ["ICNITA S.L."],
+      "href": "/v2/networks/girocleta",
+      "id": "girocleta",
+      "location": {
+        "city": "Girona",
+        "country": "ES",
+        "latitude": 41.9794005,
+        "longitude": 2.8214264
+      },
+      "name": "Girocleta"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/alba",
+      "id": "alba",
+      "location": {
+        "city": "Alba",
+        "country": "IT",
+        "latitude": 44.716667,
+        "longitude": 8.083333
+      },
+      "name": "Alba",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=139"
+    },
+    {
+      "company": ["IGP S.p.A."],
+      "ebikes": true,
+      "gbfs_href": "https://gbfs.urbansharing.com/bikemi.com/gbfs.json",
+      "href": "/v2/networks/bikemi",
+      "id": "bikemi",
+      "location": {
+        "city": "Milano",
+        "country": "IT",
+        "latitude": 45.4654542,
+        "longitude": 9.186516
+      },
+      "name": "BikeMi"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/biella",
+      "id": "biella",
+      "location": {
+        "city": "Biella",
+        "country": "IT",
+        "latitude": 45.5775,
+        "longitude": 8.051111
+      },
+      "name": "Biella",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=112"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/chivasso",
+      "id": "chivasso",
+      "location": {
+        "city": "Chivasso",
+        "country": "IT",
+        "latitude": 45.189765,
+        "longitude": 7.888935
+      },
+      "name": "Chivasso",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=201"
+    },
+    {
+      "company": ["ClearChannel"],
+      "href": "/v2/networks/bizi",
+      "id": "bizi",
+      "location": {
+        "city": "Zaragoza",
+        "country": "ES",
+        "latitude": 41.6487908,
+        "longitude": -0.8895811
+      },
+      "name": "Bizi"
+    },
+    {
+      "company": ["5M2 S.A. DE C.V.", "BKT BICIPÚBLICA S.A. DE C.V.", "Lyft Inc."],
+      "gbfs_href": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+      "href": "/v2/networks/ecobici",
+      "id": "ecobici",
+      "location": {
+        "city": "Cd de México",
+        "country": "MX",
+        "latitude": 19.4326077,
+        "longitude": -99.133208
+      },
+      "name": "EcoBici"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bici-in-busto",
+      "id": "bici-in-busto",
+      "location": {
+        "city": "Busto Arsizio",
+        "country": "IT",
+        "latitude": 45.610555,
+        "longitude": 8.852062
+      },
+      "name": "Bici in Busto",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=66"
+    },
+    {
+      "company": ["ClearChannel"],
+      "href": "/v2/networks/velo-antwerpen",
+      "id": "velo-antwerpen",
+      "location": {
+        "city": "Antwerpen",
+        "country": "BE",
+        "latitude": 51.216667,
+        "longitude": 4.4
+      },
+      "name": "Velo Antwerpen"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/cuneo",
+      "id": "cuneo",
+      "location": {
+        "city": "Cuneo",
+        "country": "IT",
+        "latitude": 44.384238,
+        "longitude": 7.541428
+      },
+      "name": "Cuneo",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=39"
+    },
+    {
+      "company": ["ClearChannel"],
+      "href": "/v2/networks/malmobybike",
+      "id": "malmobybike",
+      "location": {
+        "city": "Malmö",
+        "country": "SE",
+        "latitude": 55.605,
+        "longitude": 13.0038
+      },
+      "name": "Malmö by bike"
+    },
+    {
+      "company": ["Empresa Municipal de Transportes de Madrid, S.A."],
+      "href": "/v2/networks/bicimad",
+      "id": "bicimad",
+      "location": {
+        "city": "Madrid",
+        "country": "ES",
+        "latitude": 40.4168,
+        "longitude": -3.7038
+      },
+      "name": "BiciMAD",
+      "source": "https://mobilitylabs.emtmadrid.es/"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-didymoteicho",
+      "id": "easybike-didymoteicho",
+      "location": {
+        "city": "Didymoteicho",
+        "country": "GR",
+        "latitude": 41.3502539849,
+        "longitude": 26.4972960949
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/free-bike-sharing",
+      "id": "free-bike-sharing",
+      "location": {
+        "city": "Frosinone",
+        "country": "IT",
+        "latitude": 41.645081,
+        "longitude": 13.342123
+      },
+      "name": "FRee Bike sharing",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=53"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-glyfada",
+      "id": "easybike-glyfada",
+      "location": {
+        "city": "Glyfada",
+        "country": "GR",
+        "latitude": 37.8715809825,
+        "longitude": 23.7355544376
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-igoumenitsa",
+      "id": "easybike-igoumenitsa",
+      "location": {
+        "city": "Igoumenitsa",
+        "country": "GR",
+        "latitude": 39.5005770633,
+        "longitude": 20.2635206985
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/lecce",
+      "id": "lecce",
+      "location": {
+        "city": "Lecce",
+        "country": "IT",
+        "latitude": 40.35040350928062,
+        "longitude": 18.177824020385742
+      },
+      "name": "lecce",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=159"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-ioannina",
+      "id": "easybike-ioannina",
+      "location": {
+        "city": "Ioannina",
+        "country": "GR",
+        "latitude": 39.6639818,
+        "longitude": 20.8522784
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-karditsa",
+      "id": "easybike-karditsa",
+      "location": {
+        "city": "Karditsa",
+        "country": "GR",
+        "latitude": 39.3634604,
+        "longitude": 21.9211192
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/manerba-in-bici",
+      "id": "manerba-in-bici",
+      "location": {
+        "city": "Manerba del Garda",
+        "country": "IT",
+        "latitude": 45.561179,
+        "longitude": 10.559406
+      },
+      "name": "Manerba in Bici",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=102"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-kinouria",
+      "id": "easybike-kinouria",
+      "location": {
+        "city": "Kinouria",
+        "country": "GR",
+        "latitude": 37.1476704305,
+        "longitude": 22.8933729935
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-komotini",
+      "id": "easybike-komotini",
+      "location": {
+        "city": "Komotini",
+        "country": "GR",
+        "latitude": 41.117833,
+        "longitude": 25.4041307
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-patra",
+      "id": "easybike-patra",
+      "location": {
+        "city": "Patra",
+        "country": "GR",
+        "latitude": 38.2410966371,
+        "longitude": 21.7259683418
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/mar-e-bici",
+      "id": "mar-e-bici",
+      "location": {
+        "city": "Marciana Marina",
+        "country": "IT",
+        "latitude": 42.805855,
+        "longitude": 10.196514
+      },
+      "name": "Mar e Bici",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=90"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-rethymno",
+      "id": "easybike-rethymno",
+      "location": {
+        "city": "Rethymno",
+        "country": "GR",
+        "latitude": 35.3667571777,
+        "longitude": 24.4832845736
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-samos",
+      "id": "easybike-samos",
+      "location": {
+        "city": "Samos",
+        "country": "GR",
+        "latitude": 37.754065919,
+        "longitude": 26.9787850189
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/novara",
+      "id": "novara",
+      "location": {
+        "city": "Novara",
+        "country": "IT",
+        "latitude": 45.44574,
+        "longitude": 8.622165
+      },
+      "name": "Novara",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=131"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-mani",
+      "id": "easybike-mani",
+      "location": {
+        "city": "Mani",
+        "country": "GR",
+        "latitude": 41.4097472,
+        "longitude": 26.4024952
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/easybike-irakleio",
+      "id": "easybike-irakleio",
+      "location": {
+        "city": "Irakleio",
+        "country": "GR",
+        "latitude": 35.338735,
+        "longitude": 25.144213
+      },
+      "name": "EasyBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/thessbike",
+      "id": "thessbike",
+      "location": {
+        "city": "Thessaloniki",
+        "country": "GR",
+        "latitude": 40.6403167,
+        "longitude": 22.9352716
+      },
+      "name": "ThessBike"
+    },
+    {
+      "company": ["Brainbox Technology", "Smoove SAS"],
+      "href": "/v2/networks/athens-bikes",
+      "id": "athens-bikes",
+      "location": {
+        "city": "Athens",
+        "country": "GR",
+        "latitude": 37.9838,
+        "longitude": 23.7275
+      },
+      "name": "AthensBikes"
+    },
+    {
+      "company": ["Bicincitta Italia S.r.l."],
+      "href": "/v2/networks/goodbike",
+      "id": "goodbike",
+      "location": {
+        "city": "Padova",
+        "country": "IT",
+        "latitude": 45.4064349,
+        "longitude": 11.8767611
+      },
+      "name": "GoodBike"
+    },
+    {
+      "company": ["PBSC Urban Solutions"],
+      "gbfs_href": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json",
+      "href": "/v2/networks/bicicorunha",
+      "id": "bicicorunha",
+      "location": {
+        "city": "A Coruña",
+        "country": "ES",
+        "latitude": 43.3623,
+        "longitude": -8.4115
+      },
+      "name": "Bicicoruña"
+    },
+    {
+      "company": ["2K SYSTEMS, S.L.", "Bike Works Naron"],
+      "href": "/v2/networks/bici-ferrol-terra",
+      "id": "bici-ferrol-terra",
+      "location": {
+        "city": "Ferrol - Narón",
+        "country": "ES",
+        "latitude": 43.4896,
+        "longitude": -8.2193
+      },
+      "name": "BiciFerrolTerra"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/mimuovofe",
+      "id": "mimuovofe",
+      "location": {
+        "city": "Ferrara",
+        "country": "IT",
+        "latitude": 44.8350382,
+        "longitude": 11.6240562
+      },
+      "name": "Mi Muovo in Bici",
+      "source": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=142"
+    },
+    {
+      "company": ["Motivate International, Inc.", "PBSC Urban Solutions", "BIXI Montréal"],
+      "ebikes": true,
+      "gbfs_href": "https://gbfs.velobixi.com/gbfs/gbfs.json",
+      "href": "/v2/networks/bixi-montreal",
+      "id": "bixi-montreal",
+      "location": {
+        "city": "Montréal, QC",
+        "country": "CA",
+        "latitude": 45.508693,
+        "longitude": -73.553928
+      },
+      "name": "Bixi"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/parma",
+      "id": "parma",
+      "location": {
+        "city": "Parma",
+        "country": "IT",
+        "latitude": 44.801485,
+        "longitude": 10.3279036
+      },
+      "name": "Mi Muovo in Bici",
+      "source": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=58"
+    },
+    {
+      "company": ["Motivate International, Inc.", "PBSC Urban Solutions"],
+      "gbfs_href": "https://tor.publicbikesystem.net/ube/gbfs/v1/",
+      "href": "/v2/networks/bixi-toronto",
+      "id": "bixi-toronto",
+      "location": {
+        "city": "Toronto, ON",
+        "country": "CA",
+        "latitude": 43.653226,
+        "longitude": -79.3831843
+      },
+      "name": "Bike Share Toronto"
+    },
+    {
+      "company": ["Social Bicycles Inc."],
+      "gbfs_href": "https://hamilton.socialbicycles.com/opendata/gbfs.json",
+      "href": "/v2/networks/sobi-hamilton",
+      "id": "sobi-hamilton",
+      "location": {
+        "city": "Hamilton, ON",
+        "country": "CA",
+        "latitude": 43.25643601915583,
+        "longitude": -79.86929655075073
+      },
+      "name": "SoBi"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/pavia-in-bici",
+      "id": "pavia-in-bici",
+      "location": {
+        "city": "Pavia",
+        "country": "IT",
+        "latitude": 45.1847248,
+        "longitude": 9.1582069
+      },
+      "name": "Pavia in bici",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=45"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/bici-perugia",
+      "id": "bici-perugia",
+      "location": {
+        "city": "Perugia",
+        "country": "IT",
+        "latitude": 43.1107168,
+        "longitude": 12.3908279
+      },
+      "name": "Bici Perugia",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=122"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json",
+      "href": "/v2/networks/austin",
+      "id": "austin",
+      "location": {
+        "city": "Austin, TX",
+        "country": "US",
+        "latitude": 30.26408,
+        "longitude": -97.74355
+      },
+      "name": "ATX MetroBike"
+    },
+    {
+      "company": ["Motivate International, Inc", "PBSC"],
+      "ebikes": true,
+      "gbfs_href": "https://chat.publicbikesystem.net/ube/gbfs/v1/",
+      "href": "/v2/networks/bike-chattanooga",
+      "id": "bike-chattanooga",
+      "location": {
+        "city": "Chattanooga, TN",
+        "country": "US",
+        "latitude": 35.0456297,
+        "longitude": -85.3096801
+      },
+      "name": "Bike Chattanooga"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/piacenza",
+      "id": "piacenza",
+      "location": {
+        "city": "Piacenza",
+        "country": "IT",
+        "latitude": 45.0473754,
+        "longitude": 9.6865813
+      },
+      "name": "Mi Muovo in Bici",
+      "source": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=148"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/pinerolo",
+      "id": "pinerolo",
+      "location": {
+        "city": "Pinerolo",
+        "country": "IT",
+        "latitude": 44.8850256,
+        "longitude": 7.3499953
+      },
+      "name": "Pinerolo",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=71"
+    },
+    {
+      "company": ["Portland Bureau of Transportation (PBOT)", "Lyft Inc."],
+      "gbfs_href": "https://gbfs.biketownpdx.com/gbfs/gbfs.json",
+      "href": "/v2/networks/biketown",
+      "id": "biketown",
+      "location": {
+        "city": "Portland, OR",
+        "country": "US",
+        "latitude": 45.52175423291714,
+        "longitude": -122.68107935786247
+      },
+      "name": "BIKETOWN"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/reggio-emilia",
+      "id": "reggio-emilia",
+      "location": {
+        "city": "Reggio Emilia",
+        "country": "IT",
+        "latitude": 44.6989932,
+        "longitude": 10.6296859
+      },
+      "name": "Mi Muovo in Bici",
+      "source": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=155"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json",
+      "href": "/v2/networks/boulder",
+      "id": "boulder",
+      "location": {
+        "city": "Boulder, CO",
+        "country": "US",
+        "latitude": 40.00811,
+        "longitude": -105.26385
+      },
+      "name": "Boulder BCycle"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/rimini",
+      "id": "rimini",
+      "location": {
+        "city": "Rimini",
+        "country": "IT",
+        "latitude": 44.0570817,
+        "longitude": 12.5646003
+      },
+      "name": "Mi Muovo in Bici",
+      "source": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=149"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_broward/gbfs.json",
+      "href": "/v2/networks/broward",
+      "id": "broward",
+      "location": {
+        "city": "Fort Lauderdale, FL",
+        "country": "US",
+        "latitude": 26.12026,
+        "longitude": -80.14819
+      },
+      "name": "Broward BCycle"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_bublr/gbfs.json",
+      "href": "/v2/networks/bublr-bikes",
+      "id": "bublr-bikes",
+      "location": {
+        "city": "Milwaukee, WI",
+        "country": "US",
+        "latitude": 43.0369,
+        "longitude": -87.89667
+      },
+      "name": "Bublr Bikes"
+    },
+    {
+      "company": ["Shared Mobility Inc.", "Social Bicycles Inc."],
+      "gbfs_href": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json",
+      "href": "/v2/networks/reddy-bike-share",
+      "id": "reddy-bike-share",
+      "location": {
+        "city": "Buffalo, NY",
+        "country": "US",
+        "latitude": 42.89373841865211,
+        "longitude": -78.8718044757843
+      },
+      "name": "Reddy Bike Share"
+    },
+    {
+      "company": ["Motivate International, Inc.", "PBSC Urban Solutions"],
+      "ebikes": true,
+      "gbfs_href": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json",
+      "href": "/v2/networks/capital-bikeshare",
+      "id": "capital-bikeshare",
+      "location": {
+        "city": "Washington, DC",
+        "country": "US",
+        "latitude": 38.8967584,
+        "longitude": -77.03701629999999
+      },
+      "name": "Capital BikeShare"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json",
+      "href": "/v2/networks/charlotte",
+      "id": "charlotte",
+      "location": {
+        "city": "Charlotte, NC",
+        "country": "US",
+        "latitude": 35.22716,
+        "longitude": -80.83855
+      },
+      "name": "Charlotte Joyrides"
+    },
+    {
+      "company": ["Comunicare S.r.l."],
+      "href": "/v2/networks/saluzzo",
+      "id": "saluzzo",
+      "location": {
+        "city": "Saluzzo",
+        "country": "IT",
+        "latitude": 44.6445404,
+        "longitude": 7.492735499999999
+      },
+      "name": "Saluzzo",
+      "source": "https://www.bicincitta.com/frmLeStazioni.aspx?ID=51"
+    },
+    {
+      "company": ["BCycle, LLC"],
+      "gbfs_href": "https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json",
+      "href": "/v2/networks/cincy-red-bike",
+      "id": "cincy-red-bike",
+      "location": {
+        "city": "Cincinnati, OH",
+        "country": "US",
+        "latitude": 39.10138,
+        "longitude": -84.51217
+      },
+      "name": "Cincy Red Bike"
     }
   ]
 }

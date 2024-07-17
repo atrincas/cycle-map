@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { FetchNetworksResponse, FetchNetworkStationsResponse } from '../../types'
-import mockNetworks from '../../__mocks__/networks.json'
-import mockNetworkStations from '../../__mocks__/networkStations.json'
+import { describe, it, expect, vi } from 'vitest'
+import { FetchNetworksResponse, FetchNetworkStationsResponse } from '@/types'
+import mockNetworks from '@/__mocks__/networks.json'
+import mockNetworkStations from '@/__mocks__/networkStations.json'
 import { getNetworks, getNetworkStations } from '../cityBikeApi'
 
 describe('cityBikeApi/getNetworks', () => {
