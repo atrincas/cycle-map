@@ -58,3 +58,8 @@ export interface Extra {
   status: string
   uid: string
 }
+
+export interface ComboboxItem {
+  name: string
+  code: string
+}
