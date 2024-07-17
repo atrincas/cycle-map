@@ -60,6 +60,6 @@ export interface Extra {
 }
 
 export interface ComboboxItem {
-  name: string
-  code: string
+  label: string
+  value: string
 }
