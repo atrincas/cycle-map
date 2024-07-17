@@ -4,8 +4,21 @@ import { NetworksListItem } from '../NetworksListItem'
 import mockNetworks from '@/__mocks__/networks.json'
 
 describe('@components/NetworksList/NetworksListItem', () => {
+  const mockItem = mockNetworks.networks[1]
+
+  it('should be wrapped inside a link element with the correct href', () => {
+    render(
+      <NetworksListItem
+        name={mockItem.name}
+        company={mockItem.company}
+        href={mockItem.href}
+        location={mockItem.location}
+      />
+    )
+    expect(screen.getByRole('link')).toHaveAttribute('href', mockItem.href)
+  })
+
   it('should render the correct name, location, overview of company names, and arrow icon', () => {
-    const mockItem = mockNetworks.networks[1]
     render(
       <NetworksListItem
         name={mockItem.name}
@@ -27,7 +40,6 @@ describe('@components/NetworksList/NetworksListItem', () => {
   })
 
   it('should render number of hidden company names if text is truncated', () => {
-    const mockItem = mockNetworks.networks[1]
     const mockCompanies = ['Company name 1', 'Company name 2', 'Company name 3', 'Company name 4']
 
     render(

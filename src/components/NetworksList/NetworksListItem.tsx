@@ -7,6 +7,10 @@ interface Props {
   location: Location
 }
 
-export function NetworksListItem(props: Props) {
-  return <div>NetworksListItem Component</div>
+export function NetworksListItem({ name, company, href, location }: Props) {
+  return (
+    <section>
+      <h2></h2>
+    </section>
+  )
 }
