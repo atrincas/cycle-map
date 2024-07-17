@@ -9,6 +9,7 @@ export default defineConfig({
     coverage: {
       include: ['src/**/*.{js,jsx,ts,tsx}'],
       exclude: ['src/app/layout.tsx', 'src/components/ui/**', 'src/lib/utils.ts']
-    }
+    },
+    setupFiles: ['./vitest.setup.ts']
   }
 })
