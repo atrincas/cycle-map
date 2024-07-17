@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { fireEvent, queryHelpers, render, screen } from '@testing-library/react'
 import { Search } from '../Search'
 import countries from '@/lib/countries.json'
 import { beforeEach } from 'node:test'
@@ -11,24 +11,29 @@ describe('@components/Search', () => {
     handleOnSearch = vi.fn()
   })
 
+  afterEach(() => {
+    vi.clearAllMocks()
+  })
+
   it('should render a text input and combobox', () => {
     render(<Search comboBoxItems={countries.data} onSearch={handleOnSearch} />)
 
     const textInput = screen.getByPlaceholderText('Search network')
-    // Not sure how shadcn combobox is working so currently use testid:
-    const comboBox = screen.getByTestId('search-combo-box')
+    const comboBox = screen.getByRole('combobox')
 
     expect(textInput).toBeInTheDocument()
     expect(comboBox).toBeInTheDocument()
   })
 
   it('should set default query and default country if passed as props', () => {
+    handleOnSearch = vi.fn()
+
     render(
       <Search
         comboBoxItems={countries.data}
         onSearch={handleOnSearch}
         defaultQuery="foo"
-        defaultCountryCode="ES"
+        defaultFilterValue="ES"
       />
     )
 
@@ -42,14 +47,19 @@ describe('@components/Search', () => {
     render(<Search comboBoxItems={countries.data} onSearch={handleOnSearch} />)
 
     const textInput = screen.getByPlaceholderText('Search network')
-    const comboBox = screen.getByTestId('search-combo-box')
+    const comboBox = screen.getByRole('combobox')
 
     fireEvent.change(textInput, { target: { value: 'random query' } })
     fireEvent.submit(textInput)
 
     expect(handleOnSearch).toHaveBeenCalledWith('random query', undefined)
 
-    fireEvent.change(comboBox, { target: { value: 'ES' } })
+    fireEvent.click(comboBox)
+
+    const optionsWrapper = screen.getByRole('group')
+    const option = queryHelpers.queryAllByAttribute('data-value', optionsWrapper, 'ES')[0]
+
+    fireEvent.click(option)
 
     expect(handleOnSearch).toHaveBeenCalledWith('random query', 'ES')
   })

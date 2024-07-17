@@ -49,7 +49,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 - [x] Fetch data from citybike API and store in the client, use mock data to replicate api response
       in dev mode.
 - [x] Render Header with logo, title and description.
-- [] Render SearchComponent with TextInput and country filter Combobox.
+- [x] Render SearchComponent with TextInput and country filter Combobox.
 - [] Render paginated NetworksList (list of networks).
 - [] Render list of NetworkCards that is a clickable link to DetailView page, and should have:
   - name
