@@ -65,8 +65,8 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 #### Mapbox integration
 
 - [x] Render map showing all the bicycle networks.
-- [] Centre and zoom the map if search query is used.
-- [] Centre and zoom the map if country filter is selected.
+- [x] Centre and zoom the map if search query is used.
+- [x] Centre and zoom the map if country filter is selected.
 - [] \*Add 'Near me' button to centre and zoom the map around the user's location.
 
 #### Styling

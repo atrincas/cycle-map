@@ -1,36 +1,32 @@
 'use client'
-import { Network } from '@/types'
 import { Search } from '../Search/Search'
 import countries from '@/lib/data/countries.json'
 import { filterNetworksBySearchQuery } from '@/lib/utils'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { NetworksListItem } from './NetworksListItem'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { NetworkContext } from '../../lib/context/networkContext'
 
-interface Props {
-  networks: Network[]
-}
-
-export function NetworksList({ networks }: Props) {
+export function NetworksList() {
+  const { allNetworks, networks, setNetworks } = useContext(NetworkContext)
   const router = useRouter()
   const params = useSearchParams()
-  const [items, setItems] = useState<Network[]>(networks)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
     const query = decodeURIComponent(searchParams.get('search') || '')
     const countryFilter = searchParams.get('country')
     setFilteredItems(query, countryFilter)
-  }, [networks])
+  }, [params])
 
   function setFilteredItems(query: string, countryFilter?: string | null) {
-    let result = filterNetworksBySearchQuery(networks, query)
+    let result = filterNetworksBySearchQuery(allNetworks, query)
 
     if (countryFilter) {
       result = result.filter((network) => network.location.country === countryFilter)
     }
 
-    setItems(result)
+    setNetworks(result)
   }
 
   function handleOnSearch(query: string, countryFilter?: string) {
@@ -57,7 +53,7 @@ export function NetworksList({ networks }: Props) {
         defaultQuery={decodeURIComponent(params.get('search') || '') || undefined}
         defaultFilterValue={params.get('country') ?? undefined}
       />
-      {items.map(({ id, name, company, location }) => (
+      {networks.map(({ id, name, company, location }) => (
         <li key={id}>
           <NetworksListItem id={id} name={name} company={company} location={location} />
         </li>

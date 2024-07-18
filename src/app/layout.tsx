@@ -13,12 +13,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: 'CycleMap',
-  description: 'Discover bike networks',
-  viewport: {
-    userScalable: false,
-    minimumScale: 1.0,
-    maximumScale: 1.0
-  }
+  description: 'Discover bike networks'
 }
 
 export default function RootLayout({

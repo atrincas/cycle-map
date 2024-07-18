@@ -1,29 +1,23 @@
 'use client'
-import mapboxgl from 'mapbox-gl'
-import { useEffect, useRef, useState } from 'react'
+import { NetworkContext } from '@/lib/context/networkContext'
 import { getBounds, getGeoJsonSource } from '@/lib/utils'
-import { Network } from '@/types'
+import mapboxgl from 'mapbox-gl'
+import { useContext, useEffect, useRef } from 'react'
 import mapStyle from './style.json'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ''
 
-interface Props {
-  networks: Network[]
-}
-
-export function Map({ networks }: Props) {
+export function Map() {
+  const { networks } = useContext(NetworkContext)
   const mapContainer = useRef(null)
   const map = useRef<mapboxgl.Map | null>(null)
-  const [lng, setLng] = useState(-71.363)
-  const [lat, setLat] = useState(44.475)
-  const [zoom, setZoom] = useState(2)
 
   useEffect(() => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current!,
       style: mapStyle as any,
-      center: [lng, lat],
-      zoom: zoom,
+      center: [-71.363, 44.475],
+      zoom: 2,
       projection: {
         name: 'mercator',
         center: [0, 30],
@@ -49,12 +43,16 @@ export function Map({ networks }: Props) {
           }
         })
       }
-
-      map.current?.fitBounds(getBounds(networks), {
-        padding: { top: 20, right: 20, bottom: 20, left: 20 }
-      })
     })
   }, [])
+
+  useEffect(() => {
+    if (!map.current || networks.length === 0) return
+
+    map.current?.fitBounds(getBounds(networks), {
+      padding: { top: 20, right: 20, bottom: 20, left: 20 }
+    })
+  }, [networks])
 
   return (
     <div className="relative">
