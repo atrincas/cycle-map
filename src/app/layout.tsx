@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import 'mapbox-gl/dist/mapbox-gl.css'
 import './globals.css'
 
 const fontSans = FontSans({
@@ -12,7 +13,12 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: 'CycleMap',
-  description: 'Discover bike networks'
+  description: 'Discover bike networks',
+  viewport: {
+    userScalable: false,
+    minimumScale: 1.0,
+    maximumScale: 1.0
+  }
 }
 
 export default function RootLayout({
@@ -22,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body className={cn('bg-background font-sans antialiased', fontSans.variable)}>
         {children}
       </body>
     </html>

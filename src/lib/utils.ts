@@ -2,7 +2,9 @@ import countriesMap from '@/lib/data/countriesMap.json'
 import { Network } from '@/types'
 import { type ClassValue, clsx } from 'clsx'
 import Fuse from 'fuse.js'
+import { LngLatBounds, SourceSpecification } from 'mapbox-gl'
 import { twMerge } from 'tailwind-merge'
+import mapboxgl from 'mapbox-gl'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -43,4 +45,32 @@ export function filterNetworksBySearchQuery(networks: Network[], query: string):
   })
 
   return fuse.search(query).map((result) => result.item)
+}
+
+export function getBounds(networks: Network[]): LngLatBounds {
+  const coordinatesArr = networks.map((n) => ({
+    lng: n.location.longitude,
+    lat: n.location.latitude
+  }))
+
+  return coordinatesArr.reduce(function (bounds, coord) {
+    return bounds.extend(coord)
+  }, new mapboxgl.LngLatBounds(coordinatesArr[0], coordinatesArr[0]))
+}
+
+export function getGeoJsonSource(networks: Network[]): SourceSpecification {
+  return {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: networks.map((n) => ({
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Point',
+          coordinates: [n.location.longitude, n.location.latitude]
+        }
+      }))
+    }
+  }
 }
