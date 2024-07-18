@@ -12,7 +12,7 @@ interface Props {
 
 export function Search({ comboBoxItems, defaultQuery, defaultFilterValue, onSearch }: Props) {
   const [query, setQuery] = useState(defaultQuery || '')
-  const [filterValue, setFilterValue] = useState(defaultFilterValue)
+  const [filterValue, setFilterValue] = useState(defaultFilterValue || '')
 
   function handleInputSubmit(e: FormEvent) {
     e.preventDefault()
@@ -32,8 +32,13 @@ export function Search({ comboBoxItems, defaultQuery, defaultFilterValue, onSear
           type="text"
           placeholder="Search network"
           onChange={(e) => setQuery(e.target.value)}
+          value={query}
         />
-        <Combobox items={comboBoxItems} onSelect={handleFilterSelect} />
+        <Combobox
+          items={comboBoxItems}
+          onSelect={handleFilterSelect}
+          defaultvalue={filterValue ?? undefined}
+        />
       </form>
     </div>
   )

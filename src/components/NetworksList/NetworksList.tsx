@@ -5,7 +5,7 @@ import countries from '@/lib/data/countries.json'
 import { filterNetworksBySearchQuery } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { NetworksListItem } from './NetworksListItem'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
   networks: Network[]
@@ -13,11 +13,12 @@ interface Props {
 
 export function NetworksList({ networks }: Props) {
   const router = useRouter()
+  const params = useSearchParams()
   const [items, setItems] = useState<Network[]>(networks)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
-    const query = searchParams.get('query') || ''
+    const query = decodeURIComponent(searchParams.get('search') || '')
     const countryFilter = searchParams.get('country')
     setFilteredItems(query, countryFilter)
   }, [networks])
@@ -36,7 +37,7 @@ export function NetworksList({ networks }: Props) {
     const searchParams = new URLSearchParams()
 
     if (query) {
-      searchParams.append('search', query)
+      searchParams.append('search', encodeURIComponent(query))
     }
 
     if (countryFilter) {
@@ -50,7 +51,12 @@ export function NetworksList({ networks }: Props) {
 
   return (
     <div>
-      <Search onSearch={handleOnSearch} comboBoxItems={countries.data} />
+      <Search
+        onSearch={handleOnSearch}
+        comboBoxItems={countries.data}
+        defaultQuery={decodeURIComponent(params.get('search') || '') || undefined}
+        defaultFilterValue={params.get('country') ?? undefined}
+      />
       {items.map(({ id, name, company, location }) => (
         <li key={id}>
           <NetworksListItem id={id} name={name} company={company} location={location} />
