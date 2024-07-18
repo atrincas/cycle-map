@@ -1,6 +1,6 @@
 import { getNetworks } from '@/lib/cityBikeApi'
 import { NetworksList } from '@/components/NetworksList'
-// import { Map } from '@/components/Map'
+import { Map } from '@/components/Map'
 import { HomeHeader } from '@/components/Header/HomeHeader'
 import { NetworkProvider } from '../lib/context/networkContext'
 
@@ -14,7 +14,7 @@ export default async function Home() {
           <HomeHeader />
           <NetworksList />
         </aside>
-        {/* <Map /> */}
+        <Map />
       </main>
     </NetworkProvider>
   )

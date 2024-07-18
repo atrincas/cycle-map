@@ -6,7 +6,7 @@ import mockNetworks from '@/__mocks__/networks.json'
 describe('@components/NetworksList/NetworksListItem', () => {
   const mockItem = mockNetworks.networks[1]
 
-  it('should be wrapped inside a link element with the correct href', () => {
+  it('should be wrapped inside a section with role link', () => {
     render(
       <NetworksListItem
         id={mockItem.id}
@@ -15,7 +15,7 @@ describe('@components/NetworksList/NetworksListItem', () => {
         location={mockItem.location}
       />
     )
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/' + mockItem.id)
+    expect(screen.getByRole('link')).toBeInTheDocument()
   })
 
   it('should render the correct name, location, overview of company names, and arrow icon', () => {

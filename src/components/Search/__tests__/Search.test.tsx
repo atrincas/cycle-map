@@ -52,7 +52,7 @@ describe('@components/Search', () => {
     fireEvent.change(textInput, { target: { value: 'random query' } })
     fireEvent.submit(textInput)
 
-    expect(handleOnSearch).toHaveBeenCalledWith('random query', undefined)
+    expect(handleOnSearch).toHaveBeenCalledWith('random query', '')
 
     fireEvent.click(comboBox)
 

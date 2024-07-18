@@ -2,16 +2,23 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { fireEvent, queryHelpers, render, screen } from '@testing-library/react'
 import { NetworksList } from '../NetworksList'
 import mockNetworks from '@/__mocks__/networks.json'
+import { NetworkContext } from '@/lib/context/networkContext'
+import { networkContext } from '@/__mocks__/networkContext.mock'
 
 const pushMock = vi.fn()
 
 describe('@components/NetworksList', () => {
   beforeEach(() => {
-    vi.mock('next/navigation', () => ({
-      useRouter: () => ({
-        push: pushMock
-      })
-    }))
+    vi.mock('next/navigation', () => {
+      return {
+        useRouter: () => ({
+          push: pushMock
+        }),
+        useSearchParams: () => ({
+          get: vi.fn()
+        })
+      }
+    })
   })
 
   afterEach(() => {
@@ -19,14 +26,22 @@ describe('@components/NetworksList', () => {
   })
 
   it('should render a list of NetworksListItems with the correct length', () => {
-    render(<NetworksList networks={mockNetworks.networks} />)
+    render(
+      <NetworkContext.Provider value={networkContext}>
+        <NetworksList />
+      </NetworkContext.Provider>
+    )
 
     const items = screen.getAllByRole('link')
     expect(items).toHaveLength(mockNetworks.networks.length)
   })
 
   it('should update the query param in the URL', () => {
-    render(<NetworksList networks={mockNetworks.networks} />)
+    render(
+      <NetworkContext.Provider value={networkContext}>
+        <NetworksList />
+      </NetworkContext.Provider>
+    )
 
     const search = 'Cyclopolis'
     const textInput = screen.getByPlaceholderText('Search network')
@@ -39,7 +54,11 @@ describe('@components/NetworksList', () => {
   })
 
   it('should update the query param in the URL based on selected country from combobox', () => {
-    render(<NetworksList networks={mockNetworks.networks} />)
+    render(
+      <NetworkContext.Provider value={networkContext}>
+        <NetworksList />
+      </NetworkContext.Provider>
+    )
 
     const country = 'IT'
     const comboBox = screen.getByRole('combobox')
