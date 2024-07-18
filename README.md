@@ -77,7 +77,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 
 #### Minimal requirements
 
-- [] View should be located at page route /networks/[id].
+- [x] View should be located at page route /networks/[id].
 - [] Render back button to go to MainView.
 - [] Render Header with the network:
   - name

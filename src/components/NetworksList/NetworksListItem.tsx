@@ -14,7 +14,7 @@ export function NetworksListItem({ id, name, company, location }: Props) {
   const additionalCompaniesCount = getAdditionalCompaniesCount(company)
 
   return (
-    <Link href={`/${id}`} legacyBehavior>
+    <Link href={`/networks/${id}`} legacyBehavior>
       <article
         role="link"
         tabIndex={0}
