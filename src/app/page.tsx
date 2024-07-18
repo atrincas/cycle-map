@@ -1,12 +1,21 @@
-import { Button } from '@/components/ui/button'
+import { getNetworks } from '@/lib/cityBikeApi'
+import { NetworksList } from '@/components/NetworksList'
+import { Map } from '@/components/Map'
+import { HomeHeader } from '@/components/Header/HomeHeader'
+import { NetworkProvider } from '../lib/context/networkContext'
 
-export default function Home() {
+export default async function Home() {
+  const networks = await getNetworks()
+
   return (
-    <main className="flex flex-col justify-center items-center gap-20 p-10">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Hello, world!
-      </h1>
-      <Button>Click me</Button>
-    </main>
+    <NetworkProvider intitialValue={networks}>
+      <main className="grid grid-cols-[551px_auto] w-screen h-screen">
+        <aside className="relative flex flex-col gap-4 h-full overflow-y-scroll p-10">
+          <HomeHeader />
+          <NetworksList />
+        </aside>
+        <Map />
+      </main>
+    </NetworkProvider>
   )
 }
