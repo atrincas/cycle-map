@@ -58,16 +58,16 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 - [x] SearchComponent TextInput is performed against name and companies in the NetworksList.
 - [x] Filter NetworksList based on search query, selection should be stored as query param in URL.
 - [x] Filter NetworksList based on country, selection should be stored as query param in URL.
-- [] \*Render paginated NetworksList (list of networks).
-- [] \*Divide NetworksList items with Pagination if needed, selection should be stored as query
-  param in URL.
+- [ ] \*Render paginated NetworksList (list of networks).
+- [ ] \*Divide NetworksList items with Pagination if needed, selection should be stored as query
+      param in URL.
 
 #### Mapbox integration
 
 - [x] Render map showing all the bicycle networks.
 - [x] Centre and zoom the map if search query is used.
 - [x] Centre and zoom the map if country filter is selected.
-- [] \*Add 'Near me' button to centre and zoom the map around the user's location.
+- [ ] \*Add 'Near me' button to centre and zoom the map around the user's location.
 
 #### Styling
 
@@ -78,28 +78,28 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 #### Minimal requirements
 
 - [x] View should be located at page route /networks/[id].
-- [] Render back button to go to MainView.
-- [] Render Header with the network:
+- [x] Render back button to go to MainView.
+- [x] Render Header with the network:
   - name
   - location (city + country)
   - overview of company names
-- [] Render BicycleStationsList belonging to the network with:
+- [ ] Render BicycleStationsList belonging to the network with:
   - name
   - number of free bikes
   - number of slots
-- [] \*Add Pagination to BicycleStationsList, selection should be stored as query param in URL.
-- [] \*Add sorting of BicycleStationsList by free bikes and empty slots (ASC, DESC).
+- [ ] \*Add Pagination to BicycleStationsList, selection should be stored as query param in URL.
+- [ ] \*Add sorting of BicycleStationsList by free bikes and empty slots (ASC, DESC).
 
 #### Mapbox integration
 
-- [] Render map showing all the bicycle stations.
-- [] Clicking on a station on the map opens a tooltip showing:
+- [ ] Render map showing all the bicycle stations.
+- [ ] Clicking on a station on the map opens a tooltip showing:
   - name
   - number of free bikes
   - number of empty slots
 
 #### Styling
 
-- [] Apply styling according to figma files.
+- [ ] Apply styling according to figma files.
 
 \*BONUS FEATURE: Should be done last.
