@@ -1,7 +1,7 @@
 export function HomeHeader() {
   return (
     <header>
-      <div>
+      <div className="flex gap-0.5">
         <svg
           data-testid="cycle-map-logo"
           width="28"
@@ -19,10 +19,10 @@ export function HomeHeader() {
             strokeLinejoin="round"
           />
         </svg>
-        <div>CycleMap</div>
+        <div className="font-semibold text-xl text-grenadier-400">CycleMap</div>
       </div>
-      <h1>Discover bike networks</h1>
-      <p>
+      <h1 className="font-semibold text-3xl text-toreabay-800 pt-6 pb-4">Discover bike networks</h1>
+      <p className="text-muted-foreground text-sm">
         Lorem ipsum dolor sit amet consectetur. A volutpat adipiscing placerat turpis magna sem
         tempor amet faucibus. Arcu praesent viverra pellentesque nisi quam in rhoncus.
       </p>

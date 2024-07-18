@@ -1,6 +1,6 @@
 'use client'
 
-import { Check, ChevronsUpDown } from 'lucide-react'
+import { Check, MapPin as MapPinIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -34,10 +34,10 @@ export function Combobox({ items, placeholder, defaultvalue, searchPlaceholder, 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-full justify-between rounded-full text-secondary-foreground h-12 py-2 px-4"
         >
+          <MapPinIcon className="h-4 w-4 shrink-0 " />
           {value ? items.find((item) => item.value === value)?.label : placeholder || ''}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">

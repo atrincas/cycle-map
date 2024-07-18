@@ -26,20 +26,20 @@ export function Search({ comboBoxItems, defaultQuery, defaultFilterValue, onSear
   }
 
   return (
-    <div>
-      <form onSubmit={handleInputSubmit}>
-        <Input
-          type="text"
-          placeholder="Search network"
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-        />
-        <Combobox
-          items={comboBoxItems}
-          onSelect={handleFilterSelect}
-          defaultvalue={filterValue ?? undefined}
-        />
-      </form>
-    </div>
+    <form className="grid grid-cols-[auto_114px] gap-2" onSubmit={handleInputSubmit}>
+      <Input
+        type="search"
+        placeholder="Search network"
+        onChange={(e) => setQuery(e.target.value)}
+        value={query}
+      />
+      <Combobox
+        items={comboBoxItems}
+        onSelect={handleFilterSelect}
+        placeholder="Country"
+        searchPlaceholder="Search country"
+        defaultvalue={filterValue ?? undefined}
+      />
+    </form>
   )
 }

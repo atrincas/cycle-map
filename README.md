@@ -71,7 +71,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 
 #### Styling
 
-- [] Apply styling according to figma files.
+- [x] Apply styling according to figma files.
 
 ### Detail view
 
