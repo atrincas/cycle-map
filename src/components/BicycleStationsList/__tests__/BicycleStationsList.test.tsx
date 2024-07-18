@@ -7,9 +7,9 @@ describe('@components/BicycleStationsList', () => {
   it('should render the correct values for the headers', () => {
     render(<BicycleStationsList data={mockData.network.stations} />)
 
-    expect(screen.getByText('STATION')).toBeDefined()
-    expect(screen.getByText('FREE BIKES')).toBeDefined()
-    expect(screen.getByText('EMPTY SLOTS')).toBeDefined()
+    expect(screen.getByText('station name')).toBeDefined()
+    expect(screen.getByText('free bikes')).toBeDefined()
+    expect(screen.getByText('empty slots')).toBeDefined()
   })
 
   it('should render the correct rows', () => {

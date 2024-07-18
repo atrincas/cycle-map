@@ -83,7 +83,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
   - name
   - location (city + country)
   - overview of company names
-- [ ] Render BicycleStationsList belonging to the network with:
+- [x] Render BicycleStationsList belonging to the network with:
   - name
   - number of free bikes
   - number of slots
