@@ -1,9 +1,23 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { fireEvent, queryHelpers, render, screen } from '@testing-library/react'
 import { NetworksList } from '../NetworksList'
 import mockNetworks from '@/__mocks__/networks.json'
 
+const pushMock = vi.fn()
+
 describe('@components/NetworksList', () => {
+  beforeEach(() => {
+    vi.mock('next/navigation', () => ({
+      useRouter: () => ({
+        push: pushMock
+      })
+    }))
+  })
+
+  afterEach(() => {
+    pushMock.mockClear()
+  })
+
   it('should render a list of NetworksListItems with the correct length', () => {
     render(<NetworksList networks={mockNetworks.networks} />)
 
@@ -11,21 +25,20 @@ describe('@components/NetworksList', () => {
     expect(items).toHaveLength(mockNetworks.networks.length)
   })
 
-  it('should filter the list based on search query and add query param to URL', () => {
+  it('should update the query param in the URL', () => {
     render(<NetworksList networks={mockNetworks.networks} />)
 
-    const query = 'Cyclopolis'
+    const search = 'Cyclopolis'
     const textInput = screen.getByPlaceholderText('Search network')
 
-    fireEvent.change(textInput, { target: { value: query } })
+    fireEvent.change(textInput, { target: { value: search } })
     fireEvent.submit(textInput)
 
-    const items = screen.getAllByRole('link')
-    expect(items).toHaveLength(10)
-    expect(window.location.search).toEqual(`?query=${query}`)
+    expect(pushMock).toHaveBeenCalledOnce()
+    expect(pushMock).toHaveBeenCalledWith(`/?search=${search}`)
   })
 
-  it('should filter the list based on selected country from combobox and add query param to URL', () => {
+  it('should update the query param in the URL based on selected country from combobox', () => {
     render(<NetworksList networks={mockNetworks.networks} />)
 
     const country = 'IT'
@@ -38,8 +51,7 @@ describe('@components/NetworksList', () => {
 
     fireEvent.click(option)
 
-    const items = screen.getAllByRole('link')
-    expect(items).toHaveLength(35)
-    expect(window.location.search).toEqual(`?country=${country}`)
+    expect(pushMock).toHaveBeenCalledOnce()
+    expect(pushMock).toHaveBeenCalledWith(`/?country=${country}`)
   })
 })

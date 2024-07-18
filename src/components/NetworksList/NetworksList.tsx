@@ -1,10 +1,61 @@
 'use client'
 import { Network } from '@/types'
+import { Search } from '../Search/Search'
+import countries from '@/lib/data/countries.json'
+import { filterNetworksBySearchQuery } from '@/lib/utils'
+import { useEffect, useState } from 'react'
+import { NetworksListItem } from './NetworksListItem'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   networks: Network[]
 }
 
 export function NetworksList({ networks }: Props) {
-  return <div>NetworksList Component</div>
+  const router = useRouter()
+  const [items, setItems] = useState<Network[]>(networks)
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search)
+    const query = searchParams.get('query') || ''
+    const countryFilter = searchParams.get('country')
+    setFilteredItems(query, countryFilter)
+  }, [networks])
+
+  function setFilteredItems(query: string, countryFilter?: string | null) {
+    let result = filterNetworksBySearchQuery(networks, query)
+
+    if (countryFilter) {
+      result = result.filter((network) => network.location.country === countryFilter)
+    }
+
+    setItems(result)
+  }
+
+  function handleOnSearch(query: string, countryFilter?: string) {
+    const searchParams = new URLSearchParams()
+
+    if (query) {
+      searchParams.append('search', query)
+    }
+
+    if (countryFilter) {
+      searchParams.append('country', countryFilter)
+    }
+
+    const url = `${window.location.pathname}?${searchParams.toString()}`
+
+    router.push(url)
+  }
+
+  return (
+    <div>
+      <Search onSearch={handleOnSearch} comboBoxItems={countries.data} />
+      {items.map(({ id, name, company, location }) => (
+        <li key={id}>
+          <NetworksListItem id={id} name={name} company={company} location={location} />
+        </li>
+      ))}
+    </div>
+  )
 }

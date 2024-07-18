@@ -1,5 +1,7 @@
 import countriesMap from '@/lib/data/countriesMap.json'
+import { Network } from '@/types'
 import { type ClassValue, clsx } from 'clsx'
+import Fuse from 'fuse.js'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
@@ -29,4 +31,16 @@ export function getAdditionalCompaniesCount(company: string[]): number | null {
 
   // company length should be 0 or 1 at this point
   return null
+}
+
+export function filterNetworksBySearchQuery(networks: Network[], query: string): Network[] {
+  if (!query) return networks
+
+  const fuse = new Fuse(networks, {
+    keys: ['name', 'company'],
+    threshold: 0.4,
+    includeScore: true
+  })
+
+  return fuse.search(query).map((result) => result.item)
 }
