@@ -2,9 +2,9 @@
 
 import { BicycleStationsList } from '@/components/BicycleStationsList/BicycleStationsList'
 import { Header } from '@/components/Header/Header'
+import { StationsMap } from '@/components/Map'
 import { getNetworkStations } from '@/lib/cityBikeApi'
 import { useQuery } from '@tanstack/react-query'
-import { StationsMap } from '@/components/Map'
 
 interface Props {
   id: string
@@ -18,6 +18,8 @@ export default function DetailView({ id }: Props) {
     refetchIntervalInBackground: true
   })
 
+  console.log({ data, isError })
+
   if (isError || !data) {
     // TODO: This should be done in a more nicer way
     return <div>Error occurred while fetching network data.</div>
@@ -25,7 +27,7 @@ export default function DetailView({ id }: Props) {
 
   return (
     <main className="grid grid-cols-[551px_auto] w-screen h-screen">
-      <aside className="relative flex flex-col gap-4 h-full overflow-y-scroll p-10">
+      <aside className="relative flex flex-col gap-4 h-full bg-toreabay-800 text-white overflow-y-scroll">
         <Header name={data.name} company={data.company} location={data.location} />
         <BicycleStationsList data={data.stations} />
       </aside>

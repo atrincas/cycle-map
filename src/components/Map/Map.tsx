@@ -62,6 +62,33 @@ export function Map() {
   )
 }
 
+class CustomZoomControl implements mapboxgl.IControl {
+  private map: mapboxgl.Map
+  private container: HTMLDivElement
+
+  constructor(map: mapboxgl.Map) {
+    this.map = map
+    this.container = document.createElement('div')
+    this.container.className = 'cyclemap-zoom-control'
+    this.container.innerHTML = `
+      <button class="cyclemap-ctrl-zoom-in" type="button" aria-label="Zoom in" aria-disabled="false"><span class="cyclemap-ctrl-icon" aria-hidden="true" title="Zoom in"></span></button>
+      <button class="cyclemap-ctrl-zoom-out" type="button" aria-label="Zoom out" aria-disabled="false"><span class="cyclemap-ctrl-icon" aria-hidden="true" title="Zoom out"></span></button>
+    `
+
+    const buttons = this.container.querySelectorAll('button')
+    buttons[0].addEventListener('click', () => this.map.zoomIn())
+    buttons[1].addEventListener('click', () => this.map.zoomOut())
+  }
+
+  onAdd() {
+    return this.container
+  }
+
+  onRemove() {
+    this.container.parentNode?.removeChild(this.container)
+  }
+}
+
 interface StationsMapProps {
   stations: Station[]
 }
@@ -121,6 +148,9 @@ export function StationsMap({ stations }: StationsMapProps) {
       map.current?.on('mouseleave', 'networks', () => {
         map.current?.getCanvas().style.setProperty('cursor', '')
       })
+
+      let zoomControl = new CustomZoomControl(map.current!)
+      map.current?.addControl(zoomControl, 'top-right')
     })
 
     return () => map.current?.remove()

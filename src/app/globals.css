@@ -68,11 +68,71 @@
   }
 }
 
+/* Customize styles for lucide icons 
+https://lucide.dev/guide/advanced/global-styling
+*/
+.lucide {
+  stroke-width: 1.5px;
+}
+
 /* Customize styles for mapbox: */
+/* mapbox popup */
 .mapboxgl-popup-content {
   padding: 1rem;
+  border-radius: 4px;
 }
 
 .mapboxgl-popup-close-button {
   display: none;
+}
+
+/* custom zoom controls */
+.cyclemap-zoom-control {
+  pointer-events: auto;
+  margin: 32px 24px 0 0;
+  background: #fff;
+  border-radius: 43px;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cyclemap-zoom-control button {
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  width: 32px;
+  transition: background 250ms ease-in-out;
+
+  &:hover {
+    background: #e2eafd;
+  }
+}
+
+.cyclemap-zoom-control button:first-child {
+  border-radius: 43px 43px 0 0;
+}
+
+.cyclemap-zoom-control button:last-child {
+  border-radius: 0 0 43px 43px;
+}
+
+.cyclemap-zoom-control button .cyclemap-ctrl-icon {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.cyclemap-zoom-control button.cyclemap-ctrl-zoom-in .cyclemap-ctrl-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0001 4.16663V15.8333M4.16675 9.99996H15.8334' stroke='%23363698' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+.cyclemap-zoom-control button.cyclemap-ctrl-zoom-out .cyclemap-ctrl-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16675 10H15.8334' stroke='%23363698' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
