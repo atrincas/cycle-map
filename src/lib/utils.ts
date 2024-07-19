@@ -1,5 +1,5 @@
 import countriesMap from '@/lib/data/countriesMap.json'
-import { Network, Station } from '@/types'
+import { FetchNetworkStationsResponse, Network, Station } from '@/types'
 import { type ClassValue, clsx } from 'clsx'
 import Fuse from 'fuse.js'
 import { LngLatBounds, SourceSpecification } from 'mapbox-gl'
@@ -108,5 +108,22 @@ export function getGeoJsonSourceFromStations(stations: Station[]): SourceSpecifi
         }
       }))
     }
+  }
+}
+
+export function removeNumberingFromStationNames(
+  network: FetchNetworkStationsResponse
+): FetchNetworkStationsResponse {
+  return {
+    ...network,
+    stations: network.stations.map((station) => {
+      const arr = station.name.split('-')
+      const name = arr.length === 1 ? arr[0] : arr[1].trim()
+
+      return {
+        ...station,
+        name
+      }
+    })
   }
 }

@@ -142,7 +142,6 @@ export function StationsMap({ stations }: StationsMapProps) {
 
       map.current?.on('mouseenter', 'networks', () => {
         map.current?.getCanvas().style.setProperty('cursor', 'pointer')
-        console.log('style', map.current?.getCanvas().style)
       })
 
       map.current?.on('mouseleave', 'networks', () => {

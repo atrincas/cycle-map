@@ -18,8 +18,6 @@ export default function DetailView({ id }: Props) {
     refetchIntervalInBackground: true
   })
 
-  console.log({ data, isError })
-
   if (isError || !data) {
     // TODO: This should be done in a more nicer way
     return <div>Error occurred while fetching network data.</div>

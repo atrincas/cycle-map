@@ -22,7 +22,6 @@ export function Header({ name, location, company }: Props) {
       <Image
         alt="Bicycles"
         src={bicycles}
-        placeholder="blur"
         quality={100}
         fill
         sizes="100vw"
