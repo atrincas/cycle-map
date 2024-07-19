@@ -33,13 +33,18 @@ export async function getNetworkStations(id: string): Promise<FetchNetworkStatio
 
     const data = (await response.json()) as { network: FetchNetworkStationsResponse }
 
-    // remove the numbering from the station names
+    // remove the numbering from the station names if available
     return {
       ...data.network,
-      stations: data.network.stations.map((station) => ({
-        ...station,
-        name: station.name.split('-')[1].trim()
-      }))
+      stations: data.network.stations.map((station) => {
+        const arr = station.name.split('-')
+        const name = arr.length === 1 ? arr[0] : arr[1].trim()
+
+        return {
+          ...station,
+          name
+        }
+      })
     }
   } catch (err) {
     throw new Error('Failed to fetch network stations')
