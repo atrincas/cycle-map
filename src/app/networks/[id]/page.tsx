@@ -1,9 +1,25 @@
-import { BicycleStationsList } from '@/components/BicycleStationsList/BicycleStationsList'
-import data from '@/__mocks__/networkStations.json'
-export default function NetworkPage() {
+import { getNetworkStations } from '@/lib/cityBikeApi'
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
+import DetailView from './detailView'
+
+interface DetailPageProps {
+  params: {
+    id: string
+  }
+}
+
+export default async function DetailPage({ params }: DetailPageProps) {
+  const { id } = params
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery({
+    queryKey: ['network', id],
+    queryFn: () => getNetworkStations(id)
+  })
+
   return (
-    <main>
-      <BicycleStationsList data={data.network.stations} />
-    </main>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <DetailView id={id} />
+    </HydrationBoundary>
   )
 }

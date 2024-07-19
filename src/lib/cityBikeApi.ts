@@ -22,7 +22,7 @@ export async function getNetworks(): Promise<Network[]> {
   }
 }
 export async function getNetworkStations(id: string): Promise<FetchNetworkStationsResponse> {
-  if (process.env.NODE_ENV === 'development') return mocknetworkStations
+  // if (process.env.NODE_ENV === 'development') return mocknetworkStations.network
 
   try {
     const response = await fetch(`${BASE_URL}/${id}`)
@@ -31,7 +31,9 @@ export async function getNetworkStations(id: string): Promise<FetchNetworkStatio
       throw new Error('Failed to fetch network stations')
     }
 
-    return await response.json()
+    const data = await response.json()
+
+    return data.network
   } catch (err) {
     throw new Error('Failed to fetch network stations')
   }
