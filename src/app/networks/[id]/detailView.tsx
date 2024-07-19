@@ -4,6 +4,7 @@ import { BicycleStationsList } from '@/components/BicycleStationsList/BicycleSta
 import { Header } from '@/components/Header/Header'
 import { getNetworkStations } from '@/lib/cityBikeApi'
 import { useQuery } from '@tanstack/react-query'
+import { StationsMap } from '@/components/Map'
 
 interface Props {
   id: string
@@ -23,9 +24,12 @@ export default function DetailView({ id }: Props) {
   }
 
   return (
-    <main>
-      <Header name={data.name} company={data.company} location={data.location} />
-      <BicycleStationsList data={data.stations} />
+    <main className="grid grid-cols-[551px_auto] w-screen h-screen">
+      <aside className="relative flex flex-col gap-4 h-full overflow-y-scroll p-10">
+        <Header name={data.name} company={data.company} location={data.location} />
+        <BicycleStationsList data={data.stations} />
+      </aside>
+      <StationsMap stations={data.stations} />
     </main>
   )
 }

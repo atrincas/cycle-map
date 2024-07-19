@@ -1,6 +1,10 @@
 import { getCountryName } from '@/lib/utils'
 import { Location } from '@/types'
-import { Briefcase as BriefcaseIcon, MapPin as MapPinIcon } from 'lucide-react'
+import {
+  ArrowLeft as ArrowLeftIcon,
+  Briefcase as BriefcaseIcon,
+  MapPin as MapPinIcon
+} from 'lucide-react'
 import Link from 'next/link'
 
 interface Props {
@@ -12,7 +16,11 @@ interface Props {
 export function Header({ name, location, company }: Props) {
   return (
     <header>
-      <Link href="/"></Link>
+      <Link href="/">
+        <span>
+          <ArrowLeftIcon />
+        </span>
+      </Link>
       <h1>{name}</h1>
       <p className="flex items-center gap-2 mb-2">
         <MapPinIcon className="w-4 h-4" />

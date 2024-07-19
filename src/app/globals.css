@@ -67,3 +67,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Customize styles for mapbox: */
+.mapboxgl-popup-content {
+  padding: 1rem;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}

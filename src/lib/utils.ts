@@ -1,5 +1,5 @@
 import countriesMap from '@/lib/data/countriesMap.json'
-import { Network } from '@/types'
+import { Network, Station } from '@/types'
 import { type ClassValue, clsx } from 'clsx'
 import Fuse from 'fuse.js'
 import { LngLatBounds, SourceSpecification } from 'mapbox-gl'
@@ -47,11 +47,28 @@ export function filterNetworksBySearchQuery(networks: Network[], query: string):
   return fuse.search(query).map((result) => result.item)
 }
 
-export function getBounds(networks: Network[]): LngLatBounds {
-  const coordinatesArr = networks.map((n) => ({
-    lng: n.location.longitude,
-    lat: n.location.latitude
-  }))
+function isNetwork(item: Network | Station): item is Network {
+  return (item as Network).location !== undefined
+}
+
+export function getBounds(items: Network[] | Station[]): LngLatBounds {
+  const coordinatesArr = items.map((item) => {
+    let lng: number
+    let lat: number
+
+    if (isNetwork(item)) {
+      lng = item.location.longitude
+      lat = item.location.latitude
+    } else {
+      lng = item.longitude
+      lat = item.latitude
+    }
+
+    return {
+      lng,
+      lat
+    }
+  })
 
   return coordinatesArr.reduce(function (bounds, coord) {
     return bounds.extend(coord)
@@ -69,6 +86,25 @@ export function getGeoJsonSource(networks: Network[]): SourceSpecification {
         geometry: {
           type: 'Point',
           coordinates: [n.location.longitude, n.location.latitude]
+        }
+      }))
+    }
+  }
+}
+
+export function getGeoJsonSourceFromStations(stations: Station[]): SourceSpecification {
+  return {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: stations.map((s) => ({
+        type: 'Feature',
+        properties: {
+          description: `<div class="text-toreabay-800 text-base leading-7 mb-2">${s.name}</div><ul><li>Free bikes <strong>${s.free_bikes}</strong></li><li>Empty slots <strong>${s.empty_slots}</strong></ul>`
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [s.longitude, s.latitude]
         }
       }))
     }

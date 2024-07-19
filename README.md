@@ -92,8 +92,8 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 
 #### Mapbox integration
 
-- [ ] Render map showing all the bicycle stations.
-- [ ] Clicking on a station on the map opens a tooltip showing:
+- [x] Render map showing all the bicycle stations.
+- [x] Clicking on a station on the map opens a tooltip showing:
   - name
   - number of free bikes
   - number of empty slots
