@@ -27,10 +27,6 @@ export interface License {
 }
 
 export interface FetchNetworkStationsResponse {
-  network: NetworkWithStations
-}
-
-export interface NetworkWithStations {
   company: string[]
   href: string
   id: string
