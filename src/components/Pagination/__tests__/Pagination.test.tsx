@@ -11,7 +11,7 @@ describe('@components/Pagination', () => {
   })
 
   it('should render the correct buttons', () => {
-    render(<Pagination pages={pages} onPageClick={handleOnpageClick} />)
+    render(<Pagination pages={pages} currentPage={pages[1]} onPageClick={handleOnpageClick} />)
 
     const pageButtons = screen.getAllByRole('button', { name: /Page \d+/i })
     expect(screen.getByRole('button', { name: 'Previous page' })).toHaveTextContent('Previous')
@@ -20,7 +20,7 @@ describe('@components/Pagination', () => {
   })
 
   it('should call onPageClick when a button is clicked', () => {
-    render(<Pagination pages={pages} onPageClick={handleOnpageClick} />)
+    render(<Pagination pages={pages} currentPage={pages[1]} onPageClick={handleOnpageClick} />)
 
     const button = screen.getByRole('button', { name: 'Page 3' })
 

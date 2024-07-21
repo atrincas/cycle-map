@@ -4,6 +4,7 @@ import { NetworksList } from '../NetworksList'
 import mockNetworks from '@/__mocks__/networks.json'
 import { NetworkContext } from '@/lib/context/networkContext'
 import { networkContext } from '@/__mocks__/networkContext.mock'
+import { PAGE_SIZE } from '../../../lib/constants'
 
 const pushMock = vi.fn()
 
@@ -33,7 +34,7 @@ describe('@components/NetworksList', () => {
     )
 
     const items = screen.getAllByRole('link')
-    expect(items).toHaveLength(mockNetworks.networks.length)
+    expect(items).toHaveLength(PAGE_SIZE)
   })
 
   it('should update the query param in the URL', () => {

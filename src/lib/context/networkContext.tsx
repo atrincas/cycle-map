@@ -5,6 +5,8 @@ import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 're
 interface iNetworkContext {
   allNetworks: Network[]
   networks: Network[]
+  currentPage: number
+  setCurrentPage: Dispatch<SetStateAction<number>>
   setNetworks: Dispatch<SetStateAction<Network[]>>
 }
 
@@ -17,13 +19,16 @@ interface NetworkProviderProps {
 
 export const NetworkProvider: React.FC<NetworkProviderProps> = ({ intitialValue, children }) => {
   const [networks, setNetworks] = useState<Network[]>(intitialValue)
+  const [currentPage, setCurrentPage] = useState<number>(1)
 
   return (
     <NetworkContext.Provider
       value={{
         allNetworks: intitialValue,
         networks,
-        setNetworks
+        setNetworks,
+        currentPage,
+        setCurrentPage
       }}
     >
       {children}
