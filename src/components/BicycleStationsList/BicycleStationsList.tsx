@@ -4,9 +4,12 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable
 } from '@tanstack/react-table'
 import { ArrowUpDown as ArrowUpDownIcon } from 'lucide-react'
+import { Pagination } from '../Pagination/Pagination'
+import { STATIONS_PAGE_SIZE } from '@/lib/constants'
 
 const columnHelper = createColumnHelper<Station>()
 
@@ -43,7 +46,13 @@ export function BicycleStationsList({ data }: Props) {
   const table = useReactTable({
     data,
     columns,
-    getCoreRowModel: getCoreRowModel()
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: {
+      pagination: {
+        pageSize: STATIONS_PAGE_SIZE
+      }
+    }
   })
 
   return (
@@ -69,7 +78,7 @@ export function BicycleStationsList({ data }: Props) {
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
-              className="flex py-4 px-2 border-b border-dashed border-white border-opacity-50"
+              className="flex py-4 px-2 border-b border-dashed border-white border-opacity-50 last:mb-6"
             >
               {row.getVisibleCells().map((cell) => (
                 <td
@@ -83,6 +92,14 @@ export function BicycleStationsList({ data }: Props) {
           ))}
         </tbody>
       </table>
+      {table.getPageOptions().length > 1 && (
+        <Pagination
+          pages={table.getPageOptions()}
+          currentPage={table.getState().pagination.pageIndex}
+          onPageClick={(page) => table.setPageIndex(page)}
+          dark
+        />
+      )}
     </div>
   )
 }

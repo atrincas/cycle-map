@@ -2,6 +2,7 @@ import mockData from '@/__mocks__/networkStations.json'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { BicycleStationsList } from '../BicycleStationsList'
+import { STATIONS_PAGE_SIZE } from '@/lib/constants'
 
 describe('@components/BicycleStationsList', () => {
   it('should render the correct values for the headers', () => {
@@ -16,6 +17,6 @@ describe('@components/BicycleStationsList', () => {
     render(<BicycleStationsList data={mockData.network.stations} />)
 
     const rows = screen.getAllByRole('row')
-    expect(rows).toHaveLength(mockData.network.stations.length + 1) // +1 for header row
+    expect(rows).toHaveLength(STATIONS_PAGE_SIZE + 1) // +1 for header row
   })
 })

@@ -58,9 +58,8 @@ Based on the requirements and after inspecting the citybikes API I decided on th
 - [x] SearchComponent TextInput is performed against name and companies in the NetworksList.
 - [x] Filter NetworksList based on search query, selection should be stored as query param in URL.
 - [x] Filter NetworksList based on country, selection should be stored as query param in URL.
-- [ ] \*Render paginated NetworksList (list of networks).
-- [ ] \*Divide NetworksList items with Pagination if needed, selection should be stored as query
-      param in URL.
+- [x] \*Render paginated NetworksList (list of networks).
+- [x] \*Divide NetworksList items with Pagination if needed.
 
 #### Mapbox integration
 
@@ -87,7 +86,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
   - name
   - number of free bikes
   - number of slots
-- [ ] \*Add Pagination to BicycleStationsList, selection should be stored as query param in URL.
+- [x] \*Add Pagination to BicycleStationsList.
 - [ ] \*Add sorting of BicycleStationsList by free bikes and empty slots (ASC, DESC).
 
 #### Mapbox integration

@@ -5,12 +5,19 @@ import { filterNetworksBySearchQuery } from '@/lib/utils'
 import { useContext, useEffect } from 'react'
 import { NetworksListItem } from './NetworksListItem'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { NetworkContext } from '../../lib/context/networkContext'
+import { NetworkContext } from '@/lib/context/networkContext'
+import { NETWORKS_PAGE_SIZE } from '@/lib/constants'
+import { Pagination } from '../Pagination/Pagination'
 
 export function NetworksList() {
-  const { allNetworks, networks, setNetworks } = useContext(NetworkContext)
+  const { allNetworks, networks, currentPage, setCurrentPage, setNetworks } =
+    useContext(NetworkContext)
   const router = useRouter()
   const params = useSearchParams()
+  const totalPages = Math.ceil(networks.length / NETWORKS_PAGE_SIZE)
+  const startIndex = currentPage * NETWORKS_PAGE_SIZE
+  const endIndex = startIndex + NETWORKS_PAGE_SIZE
+  const currentPageItems = networks.slice(startIndex, endIndex)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
@@ -54,12 +61,19 @@ export function NetworksList() {
         defaultFilterValue={params.get('country') ?? undefined}
       />
       <ul>
-        {networks.map(({ id, name, company, location }) => (
+        {currentPageItems.map(({ id, name, company, location }) => (
           <li key={id}>
             <NetworksListItem id={id} name={name} company={company} location={location} />
           </li>
         ))}
       </ul>
+      {totalPages > 1 && (
+        <Pagination
+          pages={Array.from({ length: totalPages }, (_, index) => index)}
+          currentPage={currentPage}
+          onPageClick={setCurrentPage}
+        />
+      )}
     </>
   )
 }
