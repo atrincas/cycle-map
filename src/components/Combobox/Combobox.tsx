@@ -34,14 +34,23 @@ export function Combobox({ items, placeholder, defaultvalue, searchPlaceholder, 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between rounded-full text-secondary-foreground h-12 py-2 px-4"
+          className="w-full justify-between rounded-full text-secondary-foreground h-12 py-2 px-4 overflow-hidden"
         >
           <MapPinIcon className="h-4 w-4 shrink-0 " />
           {value ? items.find((item) => item.value === value)?.label : placeholder || ''}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
-        <Command>
+        <Command
+          filter={(value, search) => {
+            const label = items.find((item) => item.value === value)?.label.toLowerCase()
+
+            if (value.toLowerCase().includes(search)) return 1
+            if (label && label.includes(search)) return 1
+
+            return 0
+          }}
+        >
           <CommandInput placeholder={searchPlaceholder} />
           <CommandEmpty>Nohting found.</CommandEmpty>
           <CommandGroup>
