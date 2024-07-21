@@ -8,6 +8,8 @@ import { NETWORKS_PAGE_SIZE } from '../../../lib/constants'
 const pushMock = vi.fn()
 
 describe('@components/NetworksList', () => {
+  const onPaginationChangeMock = vi.fn
+
   beforeEach(() => {
     vi.mock('next/navigation', () => {
       return {
@@ -28,7 +30,7 @@ describe('@components/NetworksList', () => {
   it('should render a list of NetworksListItems with the correct length', () => {
     render(
       <NetworkContext.Provider value={networkContext}>
-        <NetworksList />
+        <NetworksList onPaginationChange={onPaginationChangeMock} />
       </NetworkContext.Provider>
     )
 
@@ -39,7 +41,7 @@ describe('@components/NetworksList', () => {
   it('should update the query param in the URL', () => {
     render(
       <NetworkContext.Provider value={networkContext}>
-        <NetworksList />
+        <NetworksList onPaginationChange={onPaginationChangeMock} />
       </NetworkContext.Provider>
     )
 
@@ -56,7 +58,7 @@ describe('@components/NetworksList', () => {
   it('should update the query param in the URL based on selected country from combobox', () => {
     render(
       <NetworkContext.Provider value={networkContext}>
-        <NetworksList />
+        <NetworksList onPaginationChange={onPaginationChangeMock} />
       </NetworkContext.Provider>
     )
 

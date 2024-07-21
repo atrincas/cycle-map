@@ -10,12 +10,14 @@ import {
 } from '@tanstack/react-table'
 import { Pagination } from '../Pagination/Pagination'
 import { columns } from './BicycleStationsList.helpers'
+import { useEffect } from 'react'
 
 interface Props {
   data: Station[]
+  onPaginationChange: () => void
 }
 
-export function BicycleStationsList({ data }: Props) {
+export function BicycleStationsList({ data, onPaginationChange }: Props) {
   const table = useReactTable({
     data,
     columns,
@@ -28,6 +30,10 @@ export function BicycleStationsList({ data }: Props) {
       }
     }
   })
+
+  useEffect(() => {
+    onPaginationChange()
+  }, [table.getState().pagination, onPaginationChange])
 
   return (
     <div className="p-2">
