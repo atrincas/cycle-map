@@ -87,7 +87,7 @@ Based on the requirements and after inspecting the citybikes API I decided on th
   - number of free bikes
   - number of slots
 - [x] \*Add Pagination to BicycleStationsList.
-- [ ] \*Add sorting of BicycleStationsList by free bikes and empty slots (ASC, DESC).
+- [x] \*Add sorting of BicycleStationsList by free bikes and empty slots (ASC, DESC).
 
 #### Mapbox integration
 
