@@ -2,31 +2,22 @@
 import { Search } from '../Search/Search'
 import countries from '@/lib/data/countries.json'
 import { filterNetworksBySearchQuery } from '@/lib/utils'
-import { useContext, useEffect } from 'react'
+import { Suspense, useContext, useEffect } from 'react'
 import { NetworksListItem } from './NetworksListItem'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { NetworkContext } from '@/lib/context/networkContext'
 import { NETWORKS_PAGE_SIZE } from '@/lib/constants'
 import { Pagination } from '../Pagination/Pagination'
 
-export function NetworksList() {
-  const { allNetworks, networks, currentPage, setCurrentPage, setNetworks } =
-    useContext(NetworkContext)
+function SearchBar() {
+  const { allNetworks, setNetworks } = useContext(NetworkContext)
   const router = useRouter()
   const params = useSearchParams()
-  const totalPages = Math.ceil(networks.length / NETWORKS_PAGE_SIZE)
-  const startIndex = currentPage * NETWORKS_PAGE_SIZE
-  const endIndex = startIndex + NETWORKS_PAGE_SIZE
-  const currentPageItems = networks.slice(startIndex, endIndex)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
     const query = decodeURIComponent(searchParams.get('search') || '')
     const countryFilter = searchParams.get('country')
-    setFilteredItems(query, countryFilter)
-  }, [params])
-
-  function setFilteredItems(query: string, countryFilter?: string | null) {
     let result = filterNetworksBySearchQuery(allNetworks, query)
 
     if (countryFilter) {
@@ -34,7 +25,7 @@ export function NetworksList() {
     }
 
     setNetworks(result)
-  }
+  }, [params, allNetworks, setNetworks])
 
   function handleOnSearch(query: string, countryFilter?: string) {
     const searchParams = new URLSearchParams()
@@ -53,13 +44,26 @@ export function NetworksList() {
   }
 
   return (
+    <Search
+      onSearch={handleOnSearch}
+      comboBoxItems={countries.data}
+      defaultQuery={decodeURIComponent(params.get('search') || '') || undefined}
+      defaultFilterValue={params.get('country') ?? undefined}
+    />
+  )
+}
+export function NetworksList() {
+  const { networks, currentPage, setCurrentPage } = useContext(NetworkContext)
+  const totalPages = Math.ceil(networks.length / NETWORKS_PAGE_SIZE)
+  const startIndex = currentPage * NETWORKS_PAGE_SIZE
+  const endIndex = startIndex + NETWORKS_PAGE_SIZE
+  const currentPageItems = networks.slice(startIndex, endIndex)
+
+  return (
     <>
-      <Search
-        onSearch={handleOnSearch}
-        comboBoxItems={countries.data}
-        defaultQuery={decodeURIComponent(params.get('search') || '') || undefined}
-        defaultFilterValue={params.get('country') ?? undefined}
-      />
+      <Suspense>
+        <SearchBar />
+      </Suspense>
       <ul>
         {currentPageItems.map(({ id, name, company, location }) => (
           <li key={id}>
