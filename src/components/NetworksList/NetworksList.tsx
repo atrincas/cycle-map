@@ -1,68 +1,30 @@
 'use client'
-import { Search } from '../Search/Search'
-import countries from '@/lib/data/countries.json'
-import { filterNetworksBySearchQuery } from '@/lib/utils'
-import { Suspense, useContext, useEffect } from 'react'
-import { NetworksListItem } from './NetworksListItem'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { NetworkContext } from '@/lib/context/networkContext'
 import { NETWORKS_PAGE_SIZE } from '@/lib/constants'
+import { NetworkContext } from '@/lib/context/networkContext'
+import { Suspense, useContext, useEffect } from 'react'
 import { Pagination } from '../Pagination/Pagination'
+import { NetworksSearch } from '../Search/NetworksSearch'
+import { NetworksListItem } from './NetworksListItem'
 
-function SearchBar() {
-  const { allNetworks, setNetworks } = useContext(NetworkContext)
-  const router = useRouter()
-  const params = useSearchParams()
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search)
-    const query = decodeURIComponent(searchParams.get('search') || '')
-    const countryFilter = searchParams.get('country')
-    let result = filterNetworksBySearchQuery(allNetworks, query)
-
-    if (countryFilter) {
-      result = result.filter((network) => network.location.country === countryFilter)
-    }
-
-    setNetworks(result)
-  }, [params, allNetworks, setNetworks])
-
-  function handleOnSearch(query: string, countryFilter?: string) {
-    const searchParams = new URLSearchParams()
-
-    if (query) {
-      searchParams.append('search', encodeURIComponent(query))
-    }
-
-    if (countryFilter) {
-      searchParams.append('country', countryFilter)
-    }
-
-    const url = `${window.location.pathname}?${searchParams.toString()}`
-
-    router.push(url)
-  }
-
-  return (
-    <Search
-      onSearch={handleOnSearch}
-      comboBoxItems={countries.data}
-      defaultQuery={decodeURIComponent(params.get('search') || '') || undefined}
-      defaultFilterValue={params.get('country') ?? undefined}
-    />
-  )
+interface Props {
+  onPaginationChange: () => void
 }
-export function NetworksList() {
+
+export function NetworksList({ onPaginationChange }: Props) {
   const { networks, currentPage, setCurrentPage } = useContext(NetworkContext)
   const totalPages = Math.ceil(networks.length / NETWORKS_PAGE_SIZE)
   const startIndex = currentPage * NETWORKS_PAGE_SIZE
   const endIndex = startIndex + NETWORKS_PAGE_SIZE
   const currentPageItems = networks.slice(startIndex, endIndex)
 
+  useEffect(() => {
+    onPaginationChange()
+  }, [currentPage, onPaginationChange])
+
   return (
     <>
       <Suspense>
-        <SearchBar />
+        <NetworksSearch />
       </Suspense>
       <ul>
         {currentPageItems.map(({ id, name, company, location }) => (
