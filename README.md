@@ -5,6 +5,8 @@
 ### Quickstart
 
 ```bash
+#.env.local
+NEXT_PUBLIC_MAPBOX_TOKEN=<your_mapbox_token>
 # install dependencies
 yarn install
 # run on localhost:3000
