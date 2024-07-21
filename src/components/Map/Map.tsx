@@ -72,7 +72,6 @@ export function MapComponent({ stations, networks, onStationClick }: MapComponen
     })
 
     return () => {
-      console.log('unmount')
       map.current?.remove()
     }
   }, [stations, networks, onStationClick])
