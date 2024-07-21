@@ -41,13 +41,13 @@ export function Header({ name, location, company }: Props) {
         <h1 className="font-bold text-3xl leading-8 mb-2">{name}</h1>
         <div className="text-toreabay-100 text-base">
           <p className="flex items-center gap-2 mb-2">
-            <MapPinIcon className="w-4 h-4" />
+            <MapPinIcon className="w-4 h-4 shrink-0" />
             <span className="text-sm leading-7">
               {location.city}, {getCountryName(location.country)}
             </span>
           </p>
           <p className="flex items-center gap-2">
-            <BriefcaseBusinessIcon strokeWidth={1} className="w-4 h-4" />
+            <BriefcaseBusinessIcon strokeWidth={1} className="w-4 h-4 shrink-0" />
             <span className="leading-5">{company.join(', ')}</span>
           </p>
         </div>
