@@ -4,7 +4,7 @@ import { Pagination } from '../Pagination'
 
 describe('@components/Pagination', () => {
   let handleOnpageClick: (page: number) => void
-  const pages = [1, 2, 3]
+  const pages = [0, 1, 2, 3, 4, 5]
 
   beforeEach(() => {
     handleOnpageClick = vi.fn()
@@ -16,16 +16,17 @@ describe('@components/Pagination', () => {
     const pageButtons = screen.getAllByRole('button', { name: /Page \d+/i })
     expect(screen.getByRole('button', { name: 'Previous page' })).toHaveTextContent('Previous')
     expect(screen.getByRole('button', { name: 'Next page' })).toHaveTextContent('Next')
-    expect(pageButtons).toHaveLength(pages.length)
+    expect(pageButtons).toHaveLength(3)
   })
 
   it('should call onPageClick when a button is clicked', () => {
     render(<Pagination pages={pages} currentPage={pages[1]} onPageClick={handleOnpageClick} />)
 
-    const button = screen.getByRole('button', { name: 'Page 3' })
+    const pageIndex = 2
+    const button = screen.getByRole('button', { name: `Page ${pageIndex + 1}` })
 
     fireEvent.click(button)
 
-    expect(handleOnpageClick).toHaveBeenCalledWith(3)
+    expect(handleOnpageClick).toHaveBeenCalledWith(pageIndex)
   })
 })

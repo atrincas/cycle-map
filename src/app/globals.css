@@ -33,7 +33,7 @@
 
   .dark {
     --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --foreground: 220 88% 97%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
@@ -69,12 +69,32 @@
 }
 
 @layer components {
+  .page-nav-btn {
+    @apply flex items-center gap-1 text-foreground text-sm font-semibold rounded py-2 px-4 hover:bg-toreabay-50 transition-colors;
+  }
+
+  .page-nav-btn:disabled {
+    @apply pointer-events-none;
+  }
+
   .page-btn {
-    @apply text-sm font-semibold text-accent-foreground hover:bg-toreabay-50 rounded w-10 h-10 p-2.5;
+    @apply text-sm font-semibold text-accent-foreground hover:bg-toreabay-50 rounded w-10 h-10 p-2.5 transition-colors;
   }
 
   .page-btn[aria-current='page'] {
     @apply bg-toreabay-100 border border-toreabay-200 cursor-default hover:bg-toreabay-50;
+  }
+
+  .dark .page-nav-btn {
+    @apply hover:text-toreabay-950;
+  }
+
+  .dark .page-btn[aria-current='page'] {
+    @apply text-toreabay-900;
+  }
+
+  .dark .page-btn {
+    @apply hover:text-toreabay-900;
   }
 }
 

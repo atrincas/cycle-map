@@ -1,20 +1,22 @@
+import classNames from 'classnames'
 import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon } from 'lucide-react'
 
 interface Props {
   pages: number[]
   currentPage: number
   onPageClick: (page: number) => void
+  dark?: boolean
 }
 
-export function Pagination({ pages, currentPage, onPageClick }: Props) {
+export function Pagination({ pages, currentPage, dark, onPageClick }: Props) {
   const totalPages = pages.length
   const getPageNumbers = () => {
-    if (totalPages <= 3) {
+    if (totalPages <= 2) {
       return pages
     }
 
-    if (currentPage <= 3) {
-      return [1, 2, 3]
+    if (currentPage <= 2) {
+      return [0, 1, 2]
     }
 
     if (currentPage === totalPages) {
@@ -25,13 +27,13 @@ export function Pagination({ pages, currentPage, onPageClick }: Props) {
   }
 
   return (
-    <nav aria-label="Pagination">
-      <ul className="flex items-center gap-1">
+    <nav className="flex justify-center" aria-label="Pagination">
+      <ul className={classNames('flex items-center gap-1', dark && 'dark')}>
         <li>
           <button
-            className="flex items-center gap-1 text-foreground text-sm font-semibold rounded py-2 px-4 hover:bg-toreabay-50"
+            className="page-nav-btn"
             onClick={() => onPageClick(currentPage - 1)}
-            disabled={currentPage === 1}
+            disabled={currentPage === 0}
             aria-label="Previous page"
           >
             <ChevronLeftIcon />
@@ -45,22 +47,22 @@ export function Pagination({ pages, currentPage, onPageClick }: Props) {
               className="page-btn"
               onClick={() => onPageClick(page)}
               aria-current={page === currentPage ? 'page' : undefined}
-              aria-label={`Page ${page}`}
+              aria-label={`Page ${page + 1}`}
             >
-              <span>{page}</span>
+              <span>{page + 1}</span>
             </button>
           </li>
         ))}
-        {currentPage !== totalPages && (
+        {pages.length > 3 && currentPage !== totalPages - 1 && (
           <li className="flex items-center text-foreground p-2.5">
             <span>...</span>
           </li>
         )}
         <li>
           <button
-            className="flex items-center gap-1 text-foreground text-sm font-semibold rounded py-2 px-4 hover:bg-toreabay-50"
+            className="page-nav-btn"
             onClick={() => onPageClick(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage === totalPages - 1}
             aria-label="Next page"
           >
             <span>Next</span>

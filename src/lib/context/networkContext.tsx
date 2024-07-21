@@ -19,7 +19,7 @@ interface NetworkProviderProps {
 
 export const NetworkProvider: React.FC<NetworkProviderProps> = ({ intitialValue, children }) => {
   const [networks, setNetworks] = useState<Network[]>(intitialValue)
-  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [currentPage, setCurrentPage] = useState<number>(0)
 
   return (
     <NetworkContext.Provider
